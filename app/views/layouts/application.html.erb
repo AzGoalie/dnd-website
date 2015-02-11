@@ -12,27 +12,11 @@
 
 <body>
 
-<nav class="top-bar" data-topbar role="navigation">
-	<ul class="title-area">
-		<li class="name">
-			<h1> <%= link_to "Dragon Fire", '#', id: "logo" %> </h1>
-		</li>
-		<li class="toggle-topbar menu-icon"> <a href="#"><span>Menu</span></a></li>
-	</ul>
+<%= render 'layouts/navbar' %>
+<div class="row">
+	<%= yield %>
+</div>
 
-	<section class="top-bar-section">
-		<ul class="right">
-			<li class="divider"></li>
-			<li> <%= link_to "Home",   '#' %> </li>
-			<li class="divider"></li>
-			<li> <%= link_to "About",  '#' %> </li>
-			<li class="divider"></li>
-			<li> <%= link_to "Log in", '#' %> </li>
-		</ul>
-	</section>
-</nav>
-
-<%= yield %>
 
 </body>
 </html>
