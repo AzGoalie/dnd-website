@@ -1,5 +1,12 @@
 <% provide(:title, 'Sign Up') %>
-<div class="text-center">
-	<h1>Sign Up</h1>
-	<p>Find me in app/views/users/new.html.erb</p>
+
+<h1 class="text-center">Sign Up</h1>
+<div class="small-8 medium-6 small-centered columns">
+	<%= simple_form_for @user do |f| %>
+ 		<%= f.input :username, required: false %>
+ 		<%= f.input :email, required: false %>
+		<%= f.input :password %>
+		<%= f.input :password_confirmation %>
+		<%= f.button :submit %>
+	<% end %>
 </div>

@@ -14,8 +14,15 @@
 
 <%= render 'layouts/navbar' %>
 <div class="row">
+	<% flash.each do |message_type, message| %>
+		<div data-alert class="alert-box <%= message_type %> radius">
+			<%= message %>
+			<a href="#" class="close">&times;</a>
+		</div>
+	<% end %>
 	<%= yield %>
 </div>
+<%= debug(params) if Rails.env.development? %>
 
 
 </body>
