@@ -1,0 +1,11 @@
+<% provide(:title, "Log In") %>
+
+<h1 class="text-center">Log In</h1>
+<div class="small-8 medium-6 small-centered columns">
+	<%= simple_form_for(:session, url: login_path) do |f| %>
+ 		<%= f.input :username, required: false %>
+		<%= f.input :password, required: false %>
+		<%= f.input :remember_me, as: :boolean %>
+		<%= f.button :submit, "Log In" %>
+	<% end %>
+</div>
