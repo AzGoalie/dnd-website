@@ -1,0 +1,21 @@
+<% provide(:title, "User List") %>
+
+<div class="small-12 small-centered columns text-center">
+	<h1> User List </h1>
+
+	<div class="pagination-centered">
+	<%= will_paginate @users, renderer: FoundationPagination::Rails %>
+	</div>
+	<table align="center">
+		<tr>
+    		<th>ID</th>
+    		<th width="200">Username</th>
+    		<th>Created At</th>
+    	</tr>
+		<%= render @users %>
+	</table>
+
+	<div class="pagination-centered">
+	<%= will_paginate @users, renderer: FoundationPagination::Rails %>
+	</div>
+</div>
