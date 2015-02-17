@@ -1,0 +1,11 @@
+<% provide(:title, 'Password Reset') %>
+
+<h1 class="text-center">Password Reset</h1>
+<div class="small-8 medium-6 small-centered columns">
+	<%= simple_form_for(@user, url: password_reset_path(params[:id])) do |f| %>
+		<%= hidden_field_tag :username, @user.username %>
+		<%= f.input :password %>
+		<%= f.input :password_confirmation %>
+		<%= f.button :submit, "Reset" %>
+	<% end %>
+</div>
