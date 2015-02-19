@@ -1,6 +1,11 @@
 class User < ActiveRecord::Base
   before_create :create_activation_digest
 
+  has_many :owned_campaigns, class_name: "Campaign", foreign_key: "owner_id"
+
+  has_many :membership
+  has_many :campaigns, through: :membership
+
   attr_accessor :remember_token, :activation_token, :reset_token
 
   validates :username, presence: true, 
