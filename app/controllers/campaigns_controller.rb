@@ -1,4 +1,6 @@
 class CampaignsController < ApplicationController
+	before_action :logged_in_user
+
 	def new
 		@campaign = Campaign.new
 	end
@@ -15,8 +17,18 @@ class CampaignsController < ApplicationController
 		end
 	end
 
+	def index
+		@campaigns = Campaign.paginate(page: params[:page])
+	end
+
 	def show
 		@campaign =  Campaign.find(params[:id])
+	end
+
+	def destroy
+		Campaign.find(params[:id]).destroy
+    	flash[:success] = "Campaign deleted"
+    	redirect_to campaigns_url
 	end
 
 	private

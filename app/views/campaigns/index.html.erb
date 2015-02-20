@@ -1,0 +1,19 @@
+<% provide(:title, "Campaigns") %>
+
+<h1 class="text-center">Campaigns</h1>
+<%= will_paginate @campaigns, renderer: BootstrapPagination::Rails %>
+
+<% if current_user %>
+	<div class="list-group">
+		<h2>Your Campaigns</h2>
+		<%= link_to 'Create a new campaign!', new_campaign_path, class: 'btn btn-primary btn-block' %> 
+		<%=render (current_user.owned_campaigns + current_user.campaigns).uniq%>
+	</div>
+<%end%>
+
+<div class="list-group">
+	<h2>All Campaigns</h2>
+	<%= render @campaigns.select { |c| c.private == false} %>
+</div>
+
+<%= will_paginate @campaigns, renderer: BootstrapPagination::Rails %>

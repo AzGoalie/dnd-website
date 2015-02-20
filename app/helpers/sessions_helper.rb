@@ -15,6 +15,14 @@ module SessionsHelper
     session[:user_id] = user.id
   end
   
+  def logged_in_user
+    unless logged_in?
+     store_location
+     flash[:danger] = "Please log in."
+     redirect_to login_url
+   end
+  end
+
   # Remembers a user in a persistent session.
   def remember(user)
     user.remember

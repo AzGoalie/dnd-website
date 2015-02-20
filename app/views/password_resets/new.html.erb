@@ -1,9 +1,9 @@
 <% provide(:title, "Forgot Password") %>
 
 <h1 class="text-center">Forgot Password</h1>
-<div class="small-8 medium-6 small-centered columns">
+<div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
 	<%= simple_form_for(:password_reset, url: password_resets_path) do |f| %>
 		<%= f.input :username, required: false %>
-		<%= f.button :submit, "Submit" %>
+		<%= f.button :submit, "Submit", class: "btn btn-lg btn-primary btn-block" %>
 	<% end %>
 </div>
