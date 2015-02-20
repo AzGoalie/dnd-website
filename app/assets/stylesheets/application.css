@@ -15,3 +15,11 @@
  *= require foundation_and_overrides
 
  */
+
+ select {
+    height: auto;
+}
+
+select[size], select[multiple] {
+    background-image: none;
+}

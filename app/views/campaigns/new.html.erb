@@ -1,0 +1,12 @@
+<% provide(:title, 'New Campaign') %>
+
+<h1 class="text-center">New Campaign</h1>
+<div class="small-8 medium-6 small-centered columns">
+	<%= simple_form_for @campaign do |f| %>
+ 		<%= f.input :title, required: false %>
+ 		<%= f.input :description, required: false %>
+		<%= f.association :users, label_method: :username %>
+		<%= f.input :private, boolean: true %>
+		<%= f.button :submit %>
+	<% end %>
+</div>
