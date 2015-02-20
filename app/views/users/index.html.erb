@@ -3,19 +3,22 @@
 <div class="small-12 small-centered columns text-center">
 	<h1> User List </h1>
 
-	<div class="pagination-centered">
-	<%= will_paginate @users, renderer: FoundationPagination::Rails %>
-	</div>
-	<table align="center">
+	<%= will_paginate @users, renderer: BootstrapPagination::Rails %>
+	<table class="table table-striped">
 		<tr>
-    		<th>ID</th>
-    		<th width="200">Username</th>
-    		<th>Created At</th>
+    		<th class="text-center">ID</th>
+    		<th class="text-center">Username</th>
+    		<th class="text-center">Created At</th>
+			<% if current_user.admin? %>
+				<th class="text-center"> Delete </th>
+        <%end%>
     	</tr>
 		<%= render @users %>
 	</table>
 
-	<div class="pagination-centered">
-	<%= will_paginate @users, renderer: FoundationPagination::Rails %>
-	</div>
+	<%= will_paginate @users, renderer: BootstrapPagination::Rails %>
 </div>
+
+
+
+

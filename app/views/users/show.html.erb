@@ -2,15 +2,15 @@
 <h1 class="text-center">User Information</h1>
 
 <table class="table table-striped">
-	<tr> <td> User Name </td> <td> <%= @user.username %> </td> </tr>
-	<tr> <td> User ID </td> <td> <%= @user.id %> </td> </tr>
-	<% if current_user?(@user) %>
-		<tr> <td> Email (hidden) </td> <td> <%= @user.email %> </td> </tr>
-	<%end%>
-	<tr> <td> Date Joined </td> <td> <%= @user.created_at.strftime("%m/%e/%Y") %> </td> </tr>
-	<tr> <td> Campaigns</td> <td> <%=render (@user.owned_campaigns + @user.campaigns).uniq%> </td> </tr>
+    <tr> <td> User Name </td> <td> <%= @user.username %> </td> </tr>
+    <tr> <td> User ID </td> <td> <%= @user.id %> </td> </tr>
+    <% if current_user?(@user) %>
+        <tr> <td> Email (hidden) </td> <td> <%= @user.email %> </td> </tr>
+    <%end%>
+    <tr> <td> Date Joined </td> <td> <%= @user.created_at.strftime("%m/%e/%Y") %> </td> </tr>
+    <tr> <td> Campaigns</td> <td> <%=render (@user.owned_campaigns + @user.campaigns).uniq%> </td> </tr>
 </table>
 
 <% if current_user?(@user) %>
-	<%= link_to "Edit user information", edit_user_path(current_user) %>
+    <%= link_to "Edit user information", edit_user_path(current_user) %>
 <%end%>

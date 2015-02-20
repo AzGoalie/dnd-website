@@ -1,9 +1,9 @@
 <%= link_to(campaign, class: "list-group-item") do %>
 	<h4 class="list-group-item-heading">
 		<%=campaign.title%>
-		<span> DM: <%=campaign.owner.username%></span>
+		<span class="pull-right small"> DM: <%=campaign.owner.username%></span>
 	</h4>
-	<p>
-		<%=campaign.description%>
+	<p class="list-group-item-text">
+	<%=campaign.description%>
 	</p>
 <%end%>

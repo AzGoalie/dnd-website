@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title> <%= full_title(yield(:title)) %> </title>
+	<title> <%= full_title(yield(:title)) %> </title>
 
-  <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'vendor/modernizr' %>
-  <%= csrf_meta_tags %>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<%= render 'layouts/shim' %>
+
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'vendor/modernizr' %>
+	<%= csrf_meta_tags %>
 </head>
 
 <body>
 
 <%= render 'layouts/navbar' %>
-<div class="row">
+<div class="container">
 	<% flash.each do |message_type, message| %>
-		<div data-alert class="alert-box <%= message_type %> radius">
-			<%= message %>
-			<a href="#" class="close">&times;</a>
-		</div>
+		<%= content_tag(:div, value.html_safe, class: "alert alert-#{key} text-center") %>
 	<% end %>
 	<%= yield %>
 </div>
