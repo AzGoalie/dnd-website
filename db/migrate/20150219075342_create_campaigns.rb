@@ -8,7 +8,7 @@ class CreateCampaigns < ActiveRecord::Migration
 
       t.timestamps null: false
     end
-    add_foreign_key :campaigns, :owners
+    add_foreign_key :campaigns, :owner
     add_foreign_key :campaigns, :users
   end
 end
