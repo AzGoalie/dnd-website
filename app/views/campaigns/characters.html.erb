@@ -1,0 +1,21 @@
+<% provide(:title, "#{@campaign.title} Characters") %>
+
+<h1 class="text-center"><%=@campaign.title%></h1>
+<%= render 'sidebar' %>
+
+<div class="col-sm-9 ">
+	<% if current_user %>
+		<div class="list-group">
+			<h2>Your Characters</h2>
+			<%= link_to 'Create a new character!', new_character_path(campaign: @campaign.id), class: 'btn btn-primary btn-block' %> 
+			<%= render @campaign.characters.select { |c| c.owner == current_user } %>
+		</div>
+	<%end%>
+
+	<% if current_user == @campaign.owner %>
+		<div class="list-group">
+			<h2>All Characters</h2>
+			<%= render @campaign.characters %>
+		</div>
+	<% end %>
+</div>

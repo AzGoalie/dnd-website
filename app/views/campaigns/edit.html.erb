@@ -1,0 +1,7 @@
+<% provide(:title, "Edit Campaign") %>
+
+<h1 class="text-center"><%= @campaign.title %></h1>
+<%= render 'sidebar' %>
+<div class="col-sm-9" >
+	<%= render 'campaign_settings', delete: true %>
+</div>

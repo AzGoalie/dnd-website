@@ -3,10 +3,12 @@ class Campaign < ActiveRecord::Base
 
   has_many :membership
   has_many :users, through: :membership
+  has_many :characters
 
   validates :title, presence: true, 
   			length: { maximum: 50 },
   			uniqueness: { case_sensitive: false }
   validates :description, presence: true, 
   			length: { maximum: 140 }
+  validates :owner, presence: true
 end

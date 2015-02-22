@@ -4,4 +4,7 @@
     <%= f.association :users, label: "Invite Users", label_method: :username %>
     <%= f.input :private, as: :boolean %>
     <%= f.button :submit, class: "btn btn-lg btn-primary btn-block" %>
+    <% if delete == true %>
+    	<%= link_to 'Delete Campaign', @campaign, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-lg btn-danger btn-block" %>
+    <% end %>
   <% end %>

@@ -14,6 +14,15 @@ User.create!(username:  "AzGoalie",
              activated: true,
              activated_at: Time.zone.now)
 
+Campaign.create!(title:  "Example Campaign",
+                 description: "This is a sample campaign that shows off features.",
+                 owner: User.first,
+                 private: false)
+
+Character.create!(name: "Example Character",
+                  owner: User.first,
+                  campaign: Campaign.first)
+
 99.times do |n|
   name  = Faker::Name.name + "#{n+1}"
   while name.length > 20

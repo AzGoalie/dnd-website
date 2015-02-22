@@ -1,29 +1,28 @@
 <% provide(:title, @campaign.title) %>
 
-<div class="row">
-    <div class="col-sm-12">
+<h1 class="text-center"><%=@campaign.title%> <%= "(private)" if @campaign.private? %></h1>
 
-      <h1 class="text-center"><%=@campaign.title%> <%= "(private)" if @campaign.private? %></h1>
-        <table class="table table-striped">
-            <tr> <td> Name </td> <td> <%= @campaign.title %> </td> </tr>
-            <tr> <td> Description </td> <td> <%= @campaign.description %> </td> </tr>
-            <tr> <td> DM </td> <td> <%= link_to @campaign.owner.username, @campaign.owner %> </td> </tr>
+<%= render 'sidebar' %>
+<div class="col-sm-9 ">
+    <table class="table table-striped">
+        <tr> <td> Name </td> <td> <%= @campaign.title %> </td> </tr>
+        <tr> <td> Description </td> <td> <%= @campaign.description %> </td> </tr>
+        <tr> <td> DM </td> <td> <%= link_to @campaign.owner.username, @campaign.owner %> </td> </tr>
             <tr> <td> Users </td> 
-                <td> 
-                    <% if @campaign.users.any? %>
-                        <% @campaign.users.each do |user|%> 
-                        <%= link_to user.username, user %><br> 
+        <td> 
+            <% if @campaign.users.any? %>
+                <% @campaign.users.each do |user|%> 
+                    <%= link_to user.username, user %><br> 
                 <%end%>
-                <%else%>
-                        None
-                <%end%>
-                </td> 
-            </tr>
-            <tr> <td> Date Created </td> <td> <%= @campaign.created_at.strftime("%m/%e/%Y")%> </td> </tr>
-        </table>
+            <%else%>
+                None
+            <%end%>
+        </td> 
+        </tr>
+        <tr> <td> Date Created </td> <td> <%= @campaign.created_at.strftime("%m/%e/%Y")%> </td> </tr>
+    </table>
 
-        <% if current_user.admin? %>
-            <%= link_to 'Admin delete', @campaign, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary btn-block" %>
-        <%end%>
-    </div>
+    <% if current_user.admin? %>
+        <%= link_to 'Admin delete', @campaign, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger btn-block" %>
+    <%end%>
 </div>

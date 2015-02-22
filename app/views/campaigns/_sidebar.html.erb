@@ -1,0 +1,26 @@
+<div class="col-sm-3">
+  <div class="sidebar-nav">
+    <div class="navbar navbar-default" role="navigation">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <span class="visible-xs navbar-brand">Campaign Menu</span>
+      </div>
+      <div class="navbar-collapse collapse sidebar-navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li class="<%= 'active' if current_page?(@campaign) %>"> <%= link_to 'Info', @campaign %> </li>
+          <% if in_campaign? %>
+            <li class="<%= 'active' if current_page?(characters_campaign_path) %>"> <%= link_to 'Characters', characters_campaign_path %> </li>
+          <%end%>
+          <% if is_owner? %>
+            <li class="<%= 'active' if current_page?(edit_campaign_path(@campaign)) %>"> <%= link_to 'Settings', edit_campaign_path(@campaign) %> </li>
+          <%end%>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+</div>

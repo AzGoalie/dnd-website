@@ -1,0 +1,9 @@
+<%= link_to(character, class: "list-group-item") do %>
+	<h4 class="list-group-item-heading">
+		<%=character.name%>
+		<span class="pull-right small"> Owner: <%=character.owner.username%></span><br>
+	</h4>
+	<p class="list-group-item-text">
+		Level: <%=character.level%>
+	</p>
+<%end%>
