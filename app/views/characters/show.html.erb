@@ -2,5 +2,184 @@
 
 <h1 class="text-center"><%=@character.name%></h1>
 
-<div class="col-sm-12 ">
+<div class="row">
+	<div class="col-sm-6 ">
+		<h2>General</h2>
+		<table class="table table-striped">
+			<tr> <th>Stat</th> <th>Total</th> <th>Training Points</th> <th>Bonus Points</th> </tr>
+			<tr> <td>Max HP</td> <td>TODO</td> <td><%=@character.hp%></td> <td><%=@character.hp_bonus%></td> </tr>
+			<tr> <td>Max Stamina</td> <td>TODO</td> <td><%=@character.stamina%></td> <td><%=@character.stamina_bonus%></td> </tr>
+			<tr> <td>Max Eita</td> <td>TODO</td> <td><%=@character.eita%></td> <td><%=@character.eita_bonus%></td> </tr>
+			<tr> <td>Initiative</td> <td>TODO</td> <td><%=@character.initiative%></td> <td><%=@character.initiative_bonus%></td> </tr>
+			<tr> <td>Adrenaline</td> <td>TODO</td> <td><%=@character.adrenaline%></td> <td><%=@character.adrenaline_bonus%></td> </tr>
+			<tr> <td>Focus</td> <td>TODO</td> <td><%=@character.focus%></td> <td><%=@character.focus_bonus%></td> </tr>
+		</table>
+	</div>
+
+	<div class="col-sm-6 ">
+		<h2>Abilities</h2>
+		<table class="table table-striped">
+			<tr> <th>Stat</th> <th>Total</th> <th>Training Points</th> <th>Bonus Points</th> </tr>
+			<tr> <td>Strength</td> <td>TODO</td> <td><%=@character.strength%></td> <td><%=@character.strength_bonus%></td> </tr>
+			<tr> <td>Constitution</td> <td>TODO</td> <td><%=@character.constitution%></td> <td><%=@character.constitution_bonus%></td> </tr>
+			<tr> <td>Dexterity</td> <td>TODO</td> <td><%=@character.dexterity%></td> <td><%=@character.dexterity_bonus%></td> </tr>
+			<tr> <td>Intelligence</td> <td>TODO</td> <td><%=@character.intelligence%></td> <td><%=@character.intelligence_bonus%></td> </tr>
+			<tr> <td>Wisdom</td> <td>TODO</td> <td><%=@character.wisdom%></td> <td><%=@character.wisdom_bonus%></td> </tr>
+			<tr> <td>Charisma</td> <td>TODO</td> <td><%=@character.charisma%></td> <td><%=@character.charisma_bonus%></td> </tr>
+		</table>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-sm-6 ">
+		<h2>Defenses</h2>
+		<table class="table table-striped">
+			<tr> <th>Stat</th> <th>Total</th> <th>Training Points</th> <th>Bonus Points</th> </tr>
+			<tr> <td>Block</td> <td>TODO</td> <td><%=@character.block%></td> <td><%=@character.block_bonus%></td> </tr>
+			<tr> <td>Reflex</td> <td>TODO</td> <td><%=@character.reflex%></td> <td><%=@character.reflex_bonus%></td> </tr>
+			<tr> <td>Resilience</td> <td>TODO</td> <td><%=@character.resilience%></td> <td><%=@character.resilience_bonus%></td> </tr>
+			<tr> <td>Willpower</td> <td>TODO</td> <td><%=@character.willpower%></td> <td><%=@character.willpower_bonus%></td> </tr>
+		</table>
+	</div>
+
+	<div class="col-sm-6">
+		<h2>Magics</h2>
+		<table class="table table-striped">
+			<tr> <th>Stat</th> <th>Total</th> <th>Training Points</th> <th>Bonus Points</th> </tr>
+			<tr> <td>Sorcery</td> <td>TODO</td> <td><%=@character.sorcery%></td> <td><%=@character.sorcery_bonus%></td> </tr>
+			<tr> <td>Enchantment</td> <td>TODO</td> <td><%=@character.enchantment%></td> <td><%=@character.enchantment_bonus%></td> </tr>
+			<tr> <td>Divine</td> <td>TODO</td> <td><%=@character.divine%></td> <td><%=@character.divine_bonus%></td> </tr>
+			<tr> <td>Barding</td> <td>TODO</td> <td><%=@character.barding%></td> <td><%=@character.barding_bonus%></td> </tr>
+			<tr> <td>Wizardry</td> <td>TODO</td> <td><%=@character.wizardry%></td> <td><%=@character.wizardry_bonus%></td> </tr>
+			<tr> <td>Alchemy</td> <td>TODO</td> <td><%=@character.alchemy%></td> <td><%=@character.alchemy_bonus%></td> </tr>
+		</table>
+	</div>
+</div>
+
+
+<div class="row">
+	<h2 class="text-center">Common Skills</h2>
+	<div class="col-sm-6 ">
+		<table class="table table-striped">
+			<tr> <th>Stat</th> <th>Total</th> <th>Training Points</th> <th>Bonus Points</th> </tr>
+			<tr> <td>Acrobatics</td> <td>TODO</td> <td><%=@character.acrobatics%></td> <td><%=@character.acrobatics_bonus%></td> </tr>
+			<tr> <td>Athletics</td> <td>TODO</td> <td><%=@character.athletics%></td> <td><%=@character.athletics_bonus%></td> </tr>
+			<tr> <td>Endurance</td> <td>TODO</td> <td><%=@character.endurance%></td> <td><%=@character.endurance_bonus%></td> </tr>
+			<tr> <td>Bluff</td> <td>TODO</td> <td><%=@character.bluff%></td> <td><%=@character.bluff_bonus%></td> </tr>
+			<tr> <td>Diplomacy</td> <td>TODO</td> <td><%=@character.diplomacy%></td> <td><%=@character.diplomacy_bonus%></td> </tr>
+			<tr> <td>Intimidate</td> <td>TODO</td> <td><%=@character.intimidate%></td> <td><%=@character.intimidate_bonus%></td> </tr>
+			<tr> <td>History</td> <td>TODO</td> <td><%=@character.history%></td> <td><%=@character.history_bonus%></td> </tr>
+			<tr> <td>Insight</td> <td>TODO</td> <td><%=@character.insight%></td> <td><%=@character.insight_bonus%></td> </tr>
+		</table>
+	</div>
+
+	<div class="col-sm-6">
+		<table class="table table-striped">
+			<tr> <th>Stat</th> <th>Total</th> <th>Training Points</th> <th>Bonus Points</th> </tr>
+			<tr> <td>Perception</td> <td>TODO</td> <td><%=@character.perception%></td> <td><%=@character.perception_bonus%></td> </tr>
+			<tr> <td>Stealth</td> <td>TODO</td> <td><%=@character.stealth%></td> <td><%=@character.stealth_bonus%></td> </tr>
+			<tr> <td>Thievery</td> <td>TODO</td> <td><%=@character.thievery%></td> <td><%=@character.thievery_bonus%></td> </tr>
+			<tr> <td>Beast Mastery</td> <td>TODO</td> <td><%=@character.beast_mastery%></td> <td><%=@character.beast_mastery_bonus%></td> </tr>
+			<tr> <td>Botany</td> <td>TODO</td> <td><%=@character.botany%></td> <td><%=@character.botany_bonus%></td> </tr>
+			<tr> <td>Gathering</td> <td>TODO</td> <td><%=@character.gathering%></td> <td><%=@character.gathering_bonus%></td> </tr>
+			<tr> <td>Spelunking</td> <td>TODO</td> <td><%=@character.spelunking%></td> <td><%=@character.spelunking_bonus%></td> </tr>
+			<tr> <td>Tracking</td> <td>TODO</td> <td><%=@character.tracking%></td> <td><%=@character.tracking_bonus%></td> </tr>
+		</table>
+	</div>
+</div>
+
+<div class="row">
+	<h2 class="text-center">Weaponry Skills</h2>
+	<div class="col-sm-6 ">
+		<table class="table table-striped">
+			<tr> <th>Stat</th> <th>Total</th> <th>Training Points</th> <th>Bonus Points</th> </tr>
+			<tr> <td>Axes</td> <td>TODO</td> <td><%=@character.axes%></td> <td><%=@character.axes_bonus%></td> </tr>
+			<tr> <td>Double Axes</td> <td>TODO</td> <td><%=@character.double_axes%></td> <td><%=@character.double_axes_bonus%></td> </tr>
+			<tr> <td>Double Hammers</td> <td>TODO</td> <td><%=@character.double_hammers%></td> <td><%=@character.double_hammers_bonus%></td> </tr>
+			<tr> <td>Heavy Blades</td> <td>TODO</td> <td><%=@character.heavy_blades%></td> <td><%=@character.heavy_blades_bonus%></td> </tr>
+			<tr> <td>Heavy Gauntlets</td> <td>TODO</td> <td><%=@character.heavy_gauntlets%></td> <td><%=@character.heavy_gauntlets_bonus%></td> </tr>
+			<tr> <td>Mallets</td> <td>TODO</td> <td><%=@character.mallets%></td> <td><%=@character.mallets_bonus%></td> </tr>
+			<tr> <td>Picks</td> <td>TODO</td> <td><%=@character.picks%></td> <td><%=@character.picks_bonus%></td> </tr>
+			<tr> <td>Double Lights</td> <td>TODO</td> <td><%=@character.double_lights%></td> <td><%=@character.double_lights_bonus%></td> </tr>
+			<tr> <td>Hatchets</td> <td>TODO</td> <td><%=@character.hatchets%></td> <td><%=@character.hatchets_bonus%></td> </tr>
+			<tr> <td>Flails</td> <td>TODO</td> <td><%=@character.flails%></td> <td><%=@character.flails_bonus%></td> </tr>
+			<tr> <td>Heavy Thrown</td> <td>TODO</td> <td><%=@character.heavy_thrown%></td> <td><%=@character.heavy_thrown_bonus%></td> </tr>
+			<tr> <td>Maces</td> <td>TODO</td> <td><%=@character.maces%></td> <td><%=@character.maces_bonus%></td> </tr>
+			<tr> <td>Pole-arms/Spears</td> <td>TODO</td> <td><%=@character.spears%></td> <td><%=@character.spears_bonus%></td> </tr>
+			<tr> <td>Bombs</td> <td>TODO</td> <td><%=@character.bombs%></td> <td><%=@character.bombs_bonus%></td> </tr>
+		</table>
+	</div>
+
+	<div class="col-sm-6">
+		<table class="table table-striped">
+			<tr> <th>Stat</th> <th>Total</th> <th>Training Points</th> <th>Bonus Points</th> </tr>		
+			<tr> <td>Bows</td> <td>TODO</td> <td><%=@character.bows%></td> <td><%=@character.bows_bonus%></td> </tr>
+			<tr> <td>Light Blades</td> <td>TODO</td> <td><%=@character.light_blades%></td> <td><%=@character.light_blades_bonus%></td> </tr>
+			<tr> <td>Light Gauntlets</td> <td>TODO</td> <td><%=@character.light_gauntlets%></td> <td><%=@character.light_gauntlets_bonus%></td> </tr>
+			<tr> <td>Light Thrown</td> <td>TODO</td> <td><%=@character.light_thrown%></td> <td><%=@character.light_thrown_bonus%></td> </tr>
+			<tr> <td>Slings</td> <td>TODO</td> <td><%=@character.slings%></td> <td><%=@character.slings_bonus%></td> </tr>
+			<tr> <td>Blow Darts</td> <td>TODO</td> <td><%=@character.blow_darts%></td> <td><%=@character.blow_darts_bonus%></td> </tr>
+			<tr> <td>Crossbows</td> <td>TODO</td> <td><%=@character.crossbows%></td> <td><%=@character.crossbows_bonus%></td> </tr>
+			<tr> <td>Firearms</td> <td>TODO</td> <td><%=@character.firearms%></td> <td><%=@character.firearms_bonus%></td> </tr>
+			<tr> <td>Crystal Orbs</td> <td>TODO</td> <td><%=@character.crystal_orbs%></td> <td><%=@character.crystal_orbs_bonus%></td> </tr>
+			<tr> <td>Staffs</td> <td>TODO</td> <td><%=@character.staffs%></td> <td><%=@character.staffs_bonus%></td> </tr>
+			<tr> <td>Divine Tomes</td> <td>TODO</td> <td><%=@character.divine_tomes%></td> <td><%=@character.divine_tomes_bonus%></td> </tr>
+			<tr> <td>Symbols</td> <td>TODO</td> <td><%=@character.symbols%></td> <td><%=@character.symbols_bonus%></td> </tr>
+			<tr> <td>Gemstones</td> <td>TODO</td> <td><%=@character.gemstones%></td> <td><%=@character.gemstones_bonus%></td> </tr>
+			<tr> <td>Wands</td> <td>TODO</td> <td><%=@character.wands%></td> <td><%=@character.wands_bonus%></td> </tr>
+		</table>
+	</div>
+</div>
+
+<div class="row">
+	<h2 class="text-center">Martial Skills</h2>
+	<div class="col-sm-6 ">
+		<table class="table table-striped">
+			<tr> <th>Stat</th> <th>Total</th> <th>Training Points</th> <th>Bonus Points</th> </tr>
+			<tr> <td>Balance</td> <td>TODO</td> <td><%=@character.balance%></td> <td><%=@character.balance_bonus%></td> </tr>
+			<tr> <td>Blocks</td> <td>TODO</td> <td><%=@character.blocks%></td> <td><%=@character.blocks_bonus%></td> </tr>
+			<tr> <td>Kicks</td> <td>TODO</td> <td><%=@character.kicks%></td> <td><%=@character.kicks_bonus%></td> </tr>
+		</table>
+	</div>
+
+	<div class="col-sm-6">
+		<table class="table table-striped">
+			<tr> <th>Stat</th> <th>Total</th> <th>Training Points</th> <th>Bonus Points</th> </tr>
+			<tr> <td>Pain</td> <td>TODO</td> <td><%=@character.pain%></td> <td><%=@character.pain_bonus%></td> </tr>
+			<tr> <td>Pressure Points</td> <td>TODO</td> <td><%=@character.pressure_points%></td> <td><%=@character.pressure_points_bonus%></td> </tr>
+			<tr> <td>Punches</td> <td>TODO</td> <td><%=@character.punches%></td> <td><%=@character.punches_bonus%></td> </tr>
+		</table>
+	</div>
+</div>
+
+<div class="row">
+	<h2 class="text-center">Crafts</h2>
+	<div class="col-sm-6 ">
+		<table class="table table-striped">
+			<tr> <th>Stat</th> <th>Total</th> <th>Training Points</th> <th>Bonus Points</th> </tr>
+			<tr> <td>Armors</td> <td>TODO</td> <td><%=@character.armors%></td> <td><%=@character.armors_bonus%></td> </tr>
+			<tr> <td>Blades</td> <td>TODO</td> <td><%=@character.blades%></td> <td><%=@character.blades_bonus%></td> </tr>
+			<tr> <td>Clothing</td> <td>TODO</td> <td><%=@character.clothing%></td> <td><%=@character.clothing_bonus%></td> </tr>
+			<tr> <td>Flails/Maces</td> <td>TODO</td> <td><%=@character.flails_c%></td> <td><%=@character.flails_c_bonus%></td> </tr>
+			<tr> <td>Foods</td> <td>TODO</td> <td><%=@character.foods%></td> <td><%=@character.foods_bonus%></td> </tr>
+			<tr> <td>Gauntlets</td> <td>TODO</td> <td><%=@character.gauntlets%></td> <td><%=@character.gauntlets_bonus%></td> </tr>
+			<tr> <td>Mallets/Picks</td> <td>TODO</td> <td><%=@character.mallets_c%></td> <td><%=@character.mallets_c_bonus%></td> </tr>
+			<tr> <td>Pole-arms/Spears</td> <td>TODO</td> <td><%=@character.spears_c%></td> <td><%=@character.spears_c_bonus%></td> </tr>
+			<tr> <td>Shields</td> <td>TODO</td> <td><%=@character.shields%></td> <td><%=@character.shields_bonus%></td> </tr>
+		</table>
+	</div>
+
+	<div class="col-sm-6">
+		<table class="table table-striped">
+			<tr> <th>Stat</th> <th>Total</th> <th>Training Points</th> <th>Bonus Points</th> </tr>
+			<tr> <td>Bows/Slings+Ammo</td> <td>TODO</td> <td><%=@character.bows_c%></td> <td><%=@character.bows_c_bonus%></td> </tr>
+			<tr> <td>Structures</td> <td>TODO</td> <td><%=@character.structures%></td> <td><%=@character.structures_bonus%></td> </tr>
+			<tr> <td>Tools</td> <td>TODO</td> <td><%=@character.tools%></td> <td><%=@character.tools_bonus%></td> </tr>
+			<tr> <td>Traps</td> <td>TODO</td> <td><%=@character.traps%></td> <td><%=@character.traps_bonus%></td> </tr>
+			<tr> <td>Chemicals</td> <td>TODO</td> <td><%=@character.chemicals%></td> <td><%=@character.chemicals_bonus%></td> </tr>
+			<tr> <td>Explosives</td> <td>TODO</td> <td><%=@character.explosives%></td> <td><%=@character.explosives_bonus%></td> </tr>
+			<tr> <td>Firearms+Ammo</td> <td>TODO</td> <td><%=@character.firearms_c%></td> <td><%=@character.firearms_c_bonus%></td> </tr>
+			<tr> <td>Machines</td> <td>TODO</td> <td><%=@character.machines%></td> <td><%=@character.machines_bonus%></td> </tr>
+		</table>
+	</div>
 </div>

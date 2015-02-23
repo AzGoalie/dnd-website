@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150221093403) do
+ActiveRecord::Schema.define(version: 20150223091514) do
 
   create_table "campaigns", force: :cascade do |t|
     t.string   "title"
@@ -108,8 +108,6 @@ ActiveRecord::Schema.define(version: 20150221093403) do
     t.integer  "double_hammers_bonus",  default: 0
     t.integer  "heavy_blades",          default: 0
     t.integer  "heavy_blades_bonus",    default: 0
-    t.integer  "heavy_guantlets",       default: 0
-    t.integer  "heavy_guantlets_bonus", default: 0
     t.integer  "mallets",               default: 0
     t.integer  "mallets_bonus",         default: 0
     t.integer  "picks",                 default: 0
@@ -177,7 +175,6 @@ ActiveRecord::Schema.define(version: 20150221093403) do
     t.integer  "foods",                 default: 0
     t.integer  "foods_bonus",           default: 0
     t.integer  "gauntlets",             default: 0
-    t.integer  "guantlets_bonus",       default: 0
     t.integer  "shields",               default: 0
     t.integer  "shields_bonus",         default: 0
     t.integer  "structures",            default: 0
@@ -190,8 +187,6 @@ ActiveRecord::Schema.define(version: 20150221093403) do
     t.integer  "chemicals_bonus",       default: 0
     t.integer  "explosives",            default: 0
     t.integer  "explosives_bonus",      default: 0
-    t.integer  "firearms_ammo",         default: 0
-    t.integer  "firearms_ammo_bonus",   default: 0
     t.integer  "machines",              default: 0
     t.integer  "machines_bonus",        default: 0
     t.integer  "sorcery",               default: 0
@@ -208,6 +203,19 @@ ActiveRecord::Schema.define(version: 20150221093403) do
     t.integer  "alchemy_bonus",         default: 0
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.integer  "heavy_gauntlets",       default: 0
+    t.integer  "heavy_gauntlets_bonus", default: 0
+    t.integer  "flails_c",              default: 0
+    t.integer  "flails_c_bonus",        default: 0
+    t.integer  "mallets_c",             default: 0
+    t.integer  "mallets_c_bonus",       default: 0
+    t.integer  "spears_c",              default: 0
+    t.integer  "spears_c_bonus",        default: 0
+    t.integer  "bows_c",                default: 0
+    t.integer  "bows_c_bonus",          default: 0
+    t.integer  "firearms_c",            default: 0
+    t.integer  "firearms_c_bonus",      default: 0
+    t.integer  "gauntlets_bonus",       default: 0
   end
 
   create_table "memberships", force: :cascade do |t|

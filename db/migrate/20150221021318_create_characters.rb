@@ -161,27 +161,27 @@ class CreateCharacters < ActiveRecord::Migration
     	t.integer :punches, default: 0
     	t.integer :punches_bonus, default: 0
 
-    	# Crafts
+    	# Crafts, commented ones fixed in another migrate
     	t.integer :armors, default: 0
     	t.integer :armors_bonus, default: 0
     	t.integer :blades, default: 0
     	t.integer :blades_bonus, default: 0
     	t.integer :clothing, default: 0
     	t.integer :clothing_bonus, default: 0
-    	t.integer :flails, default: 0
-    	t.integer :flails_bonus, default: 0
+    	#t.integer :flails, default: 0
+    	#t.integer :flails_bonus, default: 0
     	t.integer :foods, default: 0
     	t.integer :foods_bonus, default: 0
     	t.integer :gauntlets, default: 0
     	t.integer :guantlets_bonus, default: 0
-    	t.integer :mallets, default: 0
-    	t.integer :mallets_bonus, default: 0
-    	t.integer :spears, default: 0
-    	t.integer :spears_bonus, default: 0
+    	#t.integer :mallets, default: 0
+    	#t.integer :mallets_bonus, default: 0
+    	#t.integer :spears, default: 0
+    	#t.integer :spears_bonus, default: 0
     	t.integer :shields, default: 0
     	t.integer :shields_bonus, default: 0
-    	t.integer :bows, default: 0
-    	t.integer :bows_bonus, default: 0
+    	#t.integer :bows, default: 0
+    	#t.integer :bows_bonus, default: 0
     	t.integer :structures, default: 0
     	t.integer :structures_bonus, default: 0
     	t.integer :tools, default: 0
@@ -192,8 +192,8 @@ class CreateCharacters < ActiveRecord::Migration
     	t.integer :chemicals_bonus, default: 0
     	t.integer :explosives, default: 0
     	t.integer :explosives_bonus, default: 0
-    	t.integer :firearms_ammo, default: 0
-    	t.integer :firearms_ammo_bonus, default: 0
+    	#t.integer :firearms_ammo, default: 0
+    	#t.integer :firearms_ammo_bonus, default: 0
     	t.integer :machines, default: 0
     	t.integer :machines_bonus, default: 0
 
