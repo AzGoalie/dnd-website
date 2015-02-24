@@ -24,6 +24,12 @@ class CharactersController < ApplicationController
 	end
 
 	def update
+		if @character.update_attributes(user_params)
+			flash[:success] = "Saved"
+			redirect_to @character
+		else
+			render 'edit'
+		end
 	end
 
 	def destroy
@@ -35,7 +41,7 @@ class CharactersController < ApplicationController
 
 	private
 		def character_params
-			params.require(:character).permit(:name)
+			params.require(:character).permit!
 		end
 
 		def get_campaign
