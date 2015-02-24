@@ -1,7 +1,7 @@
 <%= simple_form_for @campaign do |f| %>
     <%= f.input :title, required: false %>
     <%= f.input :description, required: false %>
-    <%= f.association :users, label: "Invite Users", label_method: :username %>
+    <%= f.association :users, collection: User.all.select { |u| u.activated }, label: "Invite Users", label_method: :username %>
     <%= f.input :private, as: :boolean %>
     <%= f.button :submit, class: "btn btn-lg btn-primary btn-block" %>
     <% if delete == true %>

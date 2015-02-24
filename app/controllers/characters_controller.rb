@@ -40,9 +40,16 @@ class CharactersController < ApplicationController
 
 		def get_campaign
 			@campaign = Campaign.find(params[:campaign])
+			if current_user != @campaign.owner && !@campaign.users.include?(current_user)
+				redirect_to root_path
+				flash[:danger] = "You are not part of the campaign"
+			end
 		end
 
 		def check_campaign
-			redirect_to root_path unless params.has_key? :campaign
+			if !params.has_key? :campaign
+				flash[:danger] = "Need a campaign as a parameter"
+				redirect_to root_path
+			end
 		end
 end
