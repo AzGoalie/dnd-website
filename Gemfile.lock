@@ -173,6 +173,8 @@ GEM
       ffi (>= 0.5.0)
     rdoc (4.2.0)
       json (~> 1.4)
+    rest_in_place (2.5.0)
+      rails (>= 3.1)
     ruby-progressbar (1.7.1)
     sass (3.4.12)
     sass-rails (5.0.1)
@@ -241,6 +243,7 @@ DEPENDENCIES
   puma
   rails (= 4.2.0)
   rails_12factor
+  rest_in_place
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   simple_form

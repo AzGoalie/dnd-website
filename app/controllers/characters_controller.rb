@@ -1,7 +1,7 @@
 class CharactersController < ApplicationController
 	before_action :logged_in_user
 	before_action :check_campaign, only: [:new, :create]
-	before_action :get_campaign,   only: [:new, :create, :edit, :update]
+	before_action :get_campaign,   only: [:new, :create]
 
 	def new
 		@character = Character.new
@@ -24,11 +24,17 @@ class CharactersController < ApplicationController
 	end
 
 	def update
-		if @character.update_attributes(user_params)
-			flash[:success] = "Saved"
-			redirect_to @character
+		@character = Character.find params[:id]
+		if @character.update_attributes!(character_params)
+		respond_to do |format|
+			format.html { redirect_to( @character )}
+			format.json { render :json => @character }
+		end
 		else
-			render 'edit'
+			respond_to do |format|
+				format.html { render :action  => :edit } # edit.html.erb
+				format.json { render :nothing =>  true }
+			end
 		end
 	end
 
