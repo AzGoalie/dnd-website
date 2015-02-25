@@ -1,10 +1,9 @@
 <% provide(:title, @character.name) %>
 
-<h1 class="rest-in-place text-center" data-object="character" data-attribute="name" data-placeholder="Enter a name">
-  <%= @character.name %>
+<h1 class="text-center">
+  <%= best_in_place @character, :name %>
 </h1>
 
-<div data-object="character">
 <div class="row">
 	<div class="col-sm-6 ">
 		<h2>General</h2>
@@ -12,37 +11,37 @@
 			<tr> <th>Stat</th> <th>Total</th> <th>Training Points</th> <th>Bonus Points</th> </tr>
 			<tr> <td>Max HP</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="hp"><%=@character.hp%></td> 
-				 <td class="rest-in-place" data-attribute="hp_bonus"><%=@character.hp_bonus%></td> 
+				 <%= render 'stat', stat: :hp %>
+				 <%= render 'stat', stat: :hp_bonus %>
 			</tr>
 
 			<tr> <td>Max Stamina</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="stamina"><%=@character.stamina%></td> 
-				 <td class="rest-in-place" data-attribute="stamina_bonus"><%=@character.stamina_bonus%></td> 
+				 <%= render 'stat', stat: :stamina %>
+				 <%= render 'stat', stat: :stamina_bonus %>
 			</tr>
 
 			<tr> <td>Max Eita</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="eita"><%=@character.eita%></td> 
-				 <td class="rest-in-place" data-attribute="eita_bonus"><%=@character.eita_bonus%></td> 
+				 <%= render 'stat', stat: :eita %>
+				 <%= render 'stat', stat: :eita_bonus %>
 			</tr>
 
 			<tr> <td>Initiative</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="initiative"><%=@character.initiative%></td> 
-				 <td class="rest-in-place" data-attribute="initiative_bonus"><%=@character.initiative_bonus%></td> 
+				 <%= render 'stat', stat: :initiative %>
+				 <%= render 'stat', stat: :initiative_bonus %>
 			</tr>
 			<tr> <td>Adrenaline</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="adrenaline"><%=@character.adrenaline%></td> 
-				 <td class="rest-in-place" data-attribute="adrenaline_bonus"><%=@character.adrenaline_bonus%></td> 
+				 <%= render 'stat', stat: :adrenaline %>
+				 <%= render 'stat', stat: :adrenaline_bonus %>
 			</tr>
 			
 			<tr> <td>Focus</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="focus"><%=@character.focus%></td> 
-				 <td class="rest-in-place" data-attribute="focus_bonus"><%=@character.focus_bonus%></td> 
+				 <%= render 'stat', stat: :focus %>
+				 <%= render 'stat', stat: :focus_bonus %>
 			</tr>
 		</table>
 	</div>
@@ -53,38 +52,38 @@
 			<tr> <th>Stat</th> <th>Total</th> <th>Training Points</th> <th>Bonus Points</th> </tr>
 			<tr> <td>Strength</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="strength"><%=@character.strength%></td> 
-				 <td class="rest-in-place" data-attribute="strength_bonus"><%=@character.strength_bonus%></td>
+				 <%= render 'stat', stat: :strength %>
+				 <%= render 'stat', stat: :strength_bonus %>
 			</tr>
 
 			<tr> <td>Constitution</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="constitution"><%=@character.constitution%></td> 
-				 <td class="rest-in-place" data-attribute="constitution_bonus"><%=@character.constitution_bonus%></td>
+				 <%= render 'stat', stat: :constitution %>
+				 <%= render 'stat', stat: :constitution_bonus %>
 			</tr>
 
 			<tr> <td>Dexterity</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="dexterity"><%=@character.dexterity%></td> 
-				 <td class="rest-in-place" data-attribute="dexterity_bonus"><%=@character.dexterity_bonus%></td> 
+				 <%= render 'stat', stat: :dexterity %>
+				 <%= render 'stat', stat: :dexterity_bonus %>
 			</tr>
 
 			<tr> <td>Intelligence</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="intelligence"><%=@character.intelligence%></td> 
-				 <td class="rest-in-place" data-attribute="intelligence_bonus"><%=@character.intelligence_bonus%></td> 
+				 <%= render 'stat', stat: :intelligence %>
+				 <%= render 'stat', stat: :intelligence_bonus %>
 			</tr>
 
 			<tr> <td>Wisdom</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="wisdom"><%=@character.wisdom%></td> 
-				 <td class="rest-in-place" data-attribute="wisdom_bonus"><%=@character.wisdom_bonus%></td> 
+				 <%= render 'stat', stat: :wisdom %>
+				 <%= render 'stat', stat: :wisdom_bonus %>
 			</tr>
 
 			<tr> <td>Charisma</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="charisma"><%=@character.charisma%></td> 
-				 <td class="rest-in-place" data-attribute="charisma_bonus"><%=@character.charisma_bonus%></td> 
+				 <%= render 'stat', stat: :charisma %>
+				 <%= render 'stat', stat: :charisma_bonus %>
 			</tr>
 		</table>
 	</div>
@@ -97,26 +96,26 @@
 			<tr> <th>Stat</th> <th>Total</th> <th>Training Points</th> <th>Bonus Points</th> </tr>
 			<tr> <td>Block</td> 
 				<td>TODO</td> 
-				<td class="rest-in-place" data-attribute="block"><%=@character.block%></td> 
-				<td class="rest-in-place" data-attribute="block_bonus"><%=@character.block_bonus%></td> 
+				<%= render 'stat', stat: :block %>
+				<%= render 'stat', stat: :block_bonus %>
 			</tr>
 
 			<tr> <td>Reflex</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="reflex"><%=@character.reflex%></td>
-				  <td class="rest-in-place" data-attribute="reflex_bonus"><%=@character.reflex_bonus%></td> 
+				 <%= render 'stat', stat: :reflex %>
+				 <%= render 'stat', stat: :reflex_bonus %>
 			</tr>
 
 			<tr> <td>Resilience</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="resilience"><%=@character.resilience%></td> 
-				 <td class="rest-in-place" data-attribute="resilience_bonus"><%=@character.resilience_bonus%></td> 
+				 <%= render 'stat', stat: :resilience %>
+				 <%= render 'stat', stat: :resilience_bonus %>
 			</tr>
 
 			<tr> <td>Willpower</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="willpower"><%=@character.willpower%></td> 
-				 <td class="rest-in-place" data-attribute="willpower_bonus"><%=@character.willpower_bonus%></td> 
+				 <%= render 'stat', stat: :willpower %>
+				 <%= render 'stat', stat: :willpower_bonus %>
 			</tr>
 		</table>
 	</div>
@@ -127,38 +126,38 @@
 			<tr> <th>Stat</th> <th>Total</th> <th>Training Points</th> <th>Bonus Points</th> </tr>
 			<tr> <td>Sorcery</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="sorcery"><%=@character.sorcery%></td> 
-				 <td class="rest-in-place" data-attribute="sorcery_bonus"><%=@character.sorcery_bonus%></td> 
+				 <%= render 'stat', stat: :sorcery %>
+				 <%= render 'stat', stat: :sorcery_bonus %> 
 			</tr>
 
 			<tr> <td>Enchantment</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="enchantment"><%=@character.enchantment%></td> 
-				 <td class="rest-in-place" data-attribute="enchantment_bonus"><%=@character.enchantment_bonus%></td> 
+				 <%= render 'stat', stat: :enchantment %>
+				 <%= render 'stat', stat: :enchantment_bonus %>
 			</tr>
 
 			<tr> <td>Divine</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="divine"><%=@character.divine%></td> 
-				 <td class="rest-in-place" data-attribute="divine_bonus"><%=@character.divine_bonus%></td> 
+				 <%= render 'stat', stat: :divine %>
+				 <%= render 'stat', stat: :divine_bonus %>
 			</tr>
 
 			<tr> <td>Barding</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="barding"><%=@character.barding%></td> 
-				 <td class="rest-in-place" data-attribute="barding_bonus"><%=@character.barding_bonus%></td> 
+				 <%= render 'stat', stat: :barding %>
+				 <%= render 'stat', stat: :barding_bonus %>
 			</tr>
 
 			<tr> <td>Wizardry</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="wizardry"><%=@character.wizardry%></td> 
-				 <td class="rest-in-place" data-attribute="wizardry_bonus"><%=@character.wizardry_bonus%></td> 
+				 <%= render 'stat', stat: :wizardry %>
+				 <%= render 'stat', stat: :wizardry_bonus %>
 			</tr>
 
 			<tr> <td>Alchemy</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="alchemy"><%=@character.alchemy%></td> 
-				 <td class="rest-in-place" data-attribute="alchemy_bonus"><%=@character.alchemy_bonus%></td> 
+				 <%= render 'stat', stat: :alchemy %>
+				 <%= render 'stat', stat: :alchemy_bonus %>
 			</tr>
 		</table>
 	</div>
@@ -172,50 +171,50 @@
 			<tr> <th>Stat</th> <th>Total</th> <th>Training Points</th> <th>Bonus Points</th> </tr>
 			<tr> <td>Acrobatics</td> 
 				<td>TODO</td> 
-				<td class="rest-in-place" data-attribute="acrobatics"><%=@character.acrobatics%></td> 
-				<td class="rest-in-place" data-attribute="acrobatics_bonus"><%=@character.acrobatics_bonus%></td> 
+				<%= render 'stat', stat: :acrobatics %>
+				<%= render 'stat', stat: :acrobatics_bonus %>
 			</tr>
 
 			<tr> <td>Athletics</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="athletics"><%=@character.athletics%></td> 
-				 <td class="rest-in-place" data-attribute="athletics_bonus"><%=@character.athletics_bonus%></td> 
+				 <%= render 'stat', stat: :athletics %>
+				 <%= render 'stat', stat: :athletics_bonus %>
 			</tr>
 
 			<tr> <td>Endurance</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="endurance"><%=@character.endurance%></td> 
-				 <td class="rest-in-place" data-attribute="endurance_bonus"><%=@character.endurance_bonus%></td> 
+				 <%= render 'stat', stat: :endurance %>
+				 <%= render 'stat', stat: :endurance_bonus %>
 			</tr>
 
 			<tr> <td>Bluff</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="bluff"><%=@character.bluff%></td> 
-				 <td class="rest-in-place" data-attribute="bluff_bonus"><%=@character.bluff_bonus%></td> 
+				 <%= render 'stat', stat: :bluff %>
+				 <%= render 'stat', stat: :bluff_bonus %>
 			</tr>
 
 			<tr> <td>Diplomacy</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="diplomacy"><%=@character.diplomacy%></td> 
-				 <td class="rest-in-place" data-attribute="diplomacy_bonus"><%=@character.diplomacy_bonus%></td> 
+				 <%= render 'stat', stat: :diplomacy %>
+				 <%= render 'stat', stat: :diplomacy_bonus %>
 			</tr>
 
 			<tr> <td>Intimidate</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="intimidate"><%=@character.intimidate%></td> 
-				 <td class="rest-in-place" data-attribute="intimidate_bonus"><%=@character.intimidate_bonus%></td> 
+				 <%= render 'stat', stat: :intimidate %>
+				 <%= render 'stat', stat: :intimidate_bonus %>
 			</tr>
 
 			<tr> <td>History</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="history"><%=@character.history%></td> 
-				 <td class="rest-in-place" data-attribute="history_bonus"><%=@character.history_bonus%></td> 
+				 <%= render 'stat', stat: :history %>
+				 <%= render 'stat', stat: :history_bonus %>
 			</tr>
 
 			<tr> <td>Insight</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="insight"><%=@character.insight%></td> 
-				 <td class="rest-in-place" data-attribute="insight_bonus"><%=@character.insight_bonus%></td> 
+				 <%= render 'stat', stat: :insight %>
+				 <%= render 'stat', stat: :insight_bonus %>
 			</tr>
 		</table>
 	</div>
@@ -225,50 +224,50 @@
 			<tr> <th>Stat</th> <th>Total</th> <th>Training Points</th> <th>Bonus Points</th> </tr>
 			<tr> <td>Perception</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="perception"><%=@character.perception%></td> 
-				 <td class="rest-in-place" data-attribute="perception_bonus"><%=@character.perception_bonus%></td> 
+				 <%= render 'stat', stat: :perception %>
+				 <%= render 'stat', stat: :perception_bonus %>
 			</tr>
 
 			<tr> <td>Stealth</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="stealth"><%=@character.stealth%></td> 
-				 <td class="rest-in-place" data-attribute="stealth_bonus"><%=@character.stealth_bonus%></td> 
+				 <%= render 'stat', stat: :stealth %>
+				 <%= render 'stat', stat: :stealth_bonus %>
 			</tr>
 
 			<tr> <td>Thievery</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="thievery"><%=@character.thievery%></td> 
-				 <td class="rest-in-place" data-attribute="thievery_bonus"><%=@character.thievery_bonus%></td> 
+				 <%= render 'stat', stat: :thievery %>
+				 <%= render 'stat', stat: :thievery_bonus %>
 			</tr>
 
 			<tr> <td>Beast Mastery</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="beast_mastery"><%=@character.beast_mastery%></td> 
-				 <td class="rest-in-place" data-attribute="beast_mastery_bonus"><%=@character.beast_mastery_bonus%></td> 
+				 <%= render 'stat', stat: :beast_mastery %>
+				 <%= render 'stat', stat: :beast_mastery_bonus %>
 			</tr>
 
 			<tr> <td>Botany</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="botany"><%=@character.botany%></td> 
-				 <td class="rest-in-place" data-attribute="botany_bonus"><%=@character.botany_bonus%></td> 
+				 <%= render 'stat', stat: :botany %>
+				 <%= render 'stat', stat: :botany_bonus %>
 			</tr>
 
 			<tr> <td>Gathering</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="gathering"><%=@character.gathering%></td> 
-				 <td class="rest-in-place" data-attribute="gathering_bonus"><%=@character.gathering_bonus%></td> 
+				 <%= render 'stat', stat: :gathering %>
+				 <%= render 'stat', stat: :gathering_bonus %>
 			</tr>
 
 			<tr> <td>Spelunking</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="spelunking"><%=@character.spelunking%></td> 
-				 <td class="rest-in-place" data-attribute="spelunking_bonus"><%=@character.spelunking_bonus%></td> 
+				 <%= render 'stat', stat: :spelunking %>
+				 <%= render 'stat', stat: :spelunking_bonus %> 
 			</tr>
 
 			<tr> <td>Tracking</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="tracking"><%=@character.tracking%></td> 
-				 <td class="rest-in-place" data-attribute="tracking_bonus"><%=@character.tracking_bonus%></td> 
+				 <%= render 'stat', stat: :tracking %>
+				 <%= render 'stat', stat: :tracking_bonus %>
 			</tr>
 		</table>
 	</div>
@@ -281,86 +280,86 @@
 			<tr> <th>Stat</th> <th>Total</th> <th>Training Points</th> <th>Bonus Points</th> </tr>
 			<tr> <td>Axes</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="axes"><%=@character.axes%></td> 
-				 <td class="rest-in-place" data-attribute="axes_bonus"><%=@character.axes_bonus%></td> 
+				 <%= render 'stat', stat: :axes %>
+				 <%= render 'stat', stat: :axes_bonus %>
 			</tr>
 
 			<tr> <td>Double Axes</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="double_axes"><%=@character.double_axes%></td> 
-				 <td class="rest-in-place" data-attribute="double_axes_bonus"><%=@character.double_axes_bonus%></td> 
+				 <%= render 'stat', stat: :double_axes %>
+				 <%= render 'stat', stat: :double_axes_bonus %>
 			</tr>
 
 			<tr> <td>Double Hammers</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="double_hammers"><%=@character.double_hammers%></td> 
-				 <td class="rest-in-place" data-attribute="double_hammers_bonus"><%=@character.double_hammers_bonus%></td> 
+				 <%= render 'stat', stat: :double_hammers %>
+				 <%= render 'stat', stat: :double_hammers_bonus %>
 			</tr>
 
 			<tr> <td>Heavy Blades</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="heavy_blades"><%=@character.heavy_blades%></td> 
-				 <td class="rest-in-place" data-attribute="heavy_blades_bonus"><%=@character.heavy_blades_bonus%></td> 
+				 <%= render 'stat', stat: :heavy_blades %>
+				 <%= render 'stat', stat: :heavy_blades_bonus %>
 			</tr>
 
 			<tr> <td>Heavy Gauntlets</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="heavy_gauntlets"><%=@character.heavy_gauntlets%></td> 
-				 <td class="rest-in-place" data-attribute="heavy_gauntlets_bonus"><%=@character.heavy_gauntlets_bonus%></td> 
+				 <%= render 'stat', stat: :heavy_gauntlets %>
+				 <%= render 'stat', stat: :heavy_gauntlets_bonus %> 
 			</tr>
 
 			<tr> <td>Mallets</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="mallets"><%=@character.mallets%></td> 
-				 <td class="rest-in-place" data-attribute="mallets_bonus"><%=@character.mallets_bonus%></td> 
+				 <%= render 'stat', stat: :mallets %>
+				 <%= render 'stat', stat: :mallets_bonus %> 
 			</tr>
 
 			<tr> <td>Picks</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="picks"><%=@character.picks%></td> 
-				 <td class="rest-in-place" data-attribute="picks_bonus"><%=@character.picks_bonus%></td> 
+				 <%= render 'stat', stat: :picks %>
+				 <%= render 'stat', stat: :picks_bonus %>
 			</tr>
 
 			<tr> <td>Double Lights</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="double_lights"><%=@character.double_lights%></td> 
-				 <td class="rest-in-place" data-attribute="double_lights_bonus"><%=@character.double_lights_bonus%></td> 
+				 <%= render 'stat', stat: :double_lights %>
+				 <%= render 'stat', stat: :double_lights_bonus %>
 			</tr>
 
 			<tr> <td>Hatchets</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="hatchets"><%=@character.hatchets%></td> 
-				 <td class="rest-in-place" data-attribute="hatchets_bonus"><%=@character.hatchets_bonus%></td> 
+				 <%= render 'stat', stat: :hatchets %>
+				 <%= render 'stat', stat: :hatchets_bonus %> 
 			</tr>
 
 			<tr> <td>Flails</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="flails"><%=@character.flails%></td> 
-				 <td class="rest-in-place" data-attribute="flails_bonus"><%=@character.flails_bonus%></td> 
+				 <%= render 'stat', stat: :flails %>
+				 <%= render 'stat', stat: :flails_bonus %>
 			</tr>
 
 			<tr> <td>Heavy Thrown</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="heavy_thrown"><%=@character.heavy_thrown%></td> 
-				 <td class="rest-in-place" data-attribute="heavy_thrown_bonus"><%=@character.heavy_thrown_bonus%></td> 
+				 <%= render 'stat', stat: :heavy_thrown %>
+				 <%= render 'stat', stat: :heavy_thrown_bonus %>
 			</tr>
 
 			<tr> <td>Maces</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="maces"><%=@character.maces%></td> 
-				 <td class="rest-in-place" data-attribute="maces_bonus"><%=@character.maces_bonus%></td> 
+				 <%= render 'stat', stat: :maces %>
+				 <%= render 'stat', stat: :maces_bonus %>
 			</tr>
 
 			<tr> <td>Pole-arms/Spears</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="spears"><%=@character.spears%></td> 
-				 <td class="rest-in-place" data-attribute="spears_bonus"><%=@character.spears_bonus%></td> 
+				 <%= render 'stat', stat: :spears %>
+				 <%= render 'stat', stat: :spears_bonus %>
 			</tr>
 
 			<tr> <td>Bombs</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="bombs"><%=@character.bombs%></td> 
-				 <td class="rest-in-place" data-attribute="bombs_bonus"><%=@character.bombs_bonus%></td> 
+				 <%= render 'stat', stat: :bombs %>
+				 <%= render 'stat', stat: :bombs_bonus %>
 			</tr>
 		</table>
 	</div>
@@ -370,86 +369,86 @@
 			<tr> <th>Stat</th> <th>Total</th> <th>Training Points</th> <th>Bonus Points</th> </tr>		
 			<tr> <td>Bows</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="bows"><%=@character.bows%></td> 
-				 <td class="rest-in-place" data-attribute="bows_bonus"><%=@character.bows_bonus%></td> 
+				 <%= render 'stat', stat: :bows %>
+				 <%= render 'stat', stat: :bows_bonus %>
 			</tr>
 
 			<tr> <td>Light Blades</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="light_blades"><%=@character.light_blades%></td> 
-				 <td class="rest-in-place" data-attribute="light_blades_bonus"><%=@character.light_blades_bonus%></td> 
+				 <%= render 'stat', stat: :light_blades %>
+				 <%= render 'stat', stat: :light_blades_bonus %>
 			</tr>
 
 			<tr> <td>Light Gauntlets</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="light_gauntlets"><%=@character.light_gauntlets%></td> 
-				 <td class="rest-in-place" data-attribute="light_gauntlets_bonus"><%=@character.light_gauntlets_bonus%></td> 
+				 <%= render 'stat', stat: :light_gauntlets %>
+				 <%= render 'stat', stat: :light_gauntlets_bonus %>
 			</tr>
 
 			<tr> <td>Light Thrown</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="light_thrown"><%=@character.light_thrown%></td> 
-				 <td class="rest-in-place" data-attribute="light_thrown_bonus"><%=@character.light_thrown_bonus%></td> 
+				 <%= render 'stat', stat: :light_thrown %>
+				 <%= render 'stat', stat: :light_thrown_bonus %> 
 			</tr>
 
 			<tr> <td>Slings</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="slings"><%=@character.slings%></td> 
-				 <td class="rest-in-place" data-attribute="slings_bonus"><%=@character.slings_bonus%></td> 
+				 <%= render 'stat', stat: :slings %>
+				 <%= render 'stat', stat: :slings_bonus %> 
 			</tr>
 
 			<tr> <td>Blow Darts</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="blow_darts"><%=@character.blow_darts%></td> 
-				 <td class="rest-in-place" data-attribute="blow_darts_bonus"><%=@character.blow_darts_bonus%></td> 
+				 <%= render 'stat', stat: :blow_darts %>
+				 <%= render 'stat', stat: :blow_darts_bonus %>
 			</tr>
 
 			<tr> <td>Crossbows</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="crossbows"><%=@character.crossbows%></td> 
-				 <td class="rest-in-place" data-attribute="crossbows_bonus"><%=@character.crossbows_bonus%></td> 
+				 <%= render 'stat', stat: :crossbows %>
+				 <%= render 'stat', stat: :crossbows_bonus %>
 			</tr>
 
 			<tr> <td>Firearms</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="firearms"><%=@character.firearms%></td> 
-				 <td class="rest-in-place" data-attribute="firearms_bonus"><%=@character.firearms_bonus%></td> 
+				 <%= render 'stat', stat: :firearms %>
+				 <%= render 'stat', stat: :firearms_bonus %>
 			</tr>
 
 			<tr> <td>Crystal Orbs</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="crystal_orbs"><%=@character.crystal_orbs%></td> 
-				 <td class="rest-in-place" data-attribute="crystal_orbs_bonus"><%=@character.crystal_orbs_bonus%></td> 
+				 <%= render 'stat', stat: :crystal_orbs %>
+				 <%= render 'stat', stat: :crystal_orbs_bonus %>
 			</tr>
 
 			<tr> <td>Staffs</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="staffs"><%=@character.staffs%></td> 
-				 <td class="rest-in-place" data-attribute="staffs_bonus"><%=@character.staffs_bonus%></td> 
+				 <%= render 'stat', stat: :staffs %>
+				 <%= render 'stat', stat: :staffs_bonus %>
 			</tr>
 
 			<tr> <td>Divine Tomes</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="divine_tomes"><%=@character.divine_tomes%></td> 
-				 <td class="rest-in-place" data-attribute="divine_tomes_bonus"><%=@character.divine_tomes_bonus%></td> 
+				 <%= render 'stat', stat: :divine_tomes %>
+				 <%= render 'stat', stat: :divine_tomes_bonus %> 
 			</tr>
 
 			<tr> <td>Symbols</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="symbols"><%=@character.symbols%></td> 
-				 <td class="rest-in-place" data-attribute="symbols_bonus"><%=@character.symbols_bonus%></td> 
+				 <%= render 'stat', stat: :symbols %>
+				 <%= render 'stat', stat: :symbols_bonus %>
 			</tr>
 
 			<tr> <td>Gemstones</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="gemstones"><%=@character.gemstones%></td> 
-				 <td class="rest-in-place" data-attribute="gemstones_bonus"><%=@character.gemstones_bonus%></td> 
+				 <%= render 'stat', stat: :gemstones %>
+				 <%= render 'stat', stat: :gemstones_bonus %> 
 			</tr>
 
 			<tr> <td>Wands</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="wands"><%=@character.wands%></td> 
-				 <td class="rest-in-place" data-attribute="wands_bonus"><%=@character.wands_bonus%></td> 
+				 <%= render 'stat', stat: :wands %>
+				 <%= render 'stat', stat: :wands_bonus %>
 			</tr>
 		</table>
 	</div>
@@ -462,20 +461,20 @@
 			<tr> <th>Stat</th> <th>Total</th> <th>Training Points</th> <th>Bonus Points</th> </tr>
 			<tr> <td>Balance</td>
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="balance"><%=@character.balance%></td> 
-				 <td class="rest-in-place" data-attribute="balance_bonus"><%=@character.balance_bonus%></td> 
+				 <%= render 'stat', stat: :balance %>
+				 <%= render 'stat', stat: :balance_bonus %> 
 			</tr>
 
 			<tr> <td>Blocks</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="blocks"><%=@character.blocks%></td> 
-				 <td class="rest-in-place" data-attribute="blocks_bonus"><%=@character.blocks_bonus%></td> 
+				 <%= render 'stat', stat: :blocks %>
+				 <%= render 'stat', stat: :blocks_bonus %>
 			</tr>
 
 			<tr> <td>Kicks</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="kicks"><%=@character.kicks%></td> 
-				 <td class="rest-in-place" data-attribute="kicks_bonus"><%=@character.kicks_bonus%></td> 
+				 <%= render 'stat', stat: :kicks %>
+				 <%= render 'stat', stat: :kicks_bonus %> 
 			</tr>
 		</table>
 	</div>
@@ -485,20 +484,20 @@
 			<tr> <th>Stat</th> <th>Total</th> <th>Training Points</th> <th>Bonus Points</th> </tr>
 			<tr> <td>Pain</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="pain"><%=@character.pain%></td> 
-				 <td class="rest-in-place" data-attribute="pain_bonus"><%=@character.pain_bonus%></td> 
+				 <%= render 'stat', stat: :pain %>
+				 <%= render 'stat', stat: :pain_bonus %> 
 			</tr>
 
 			<tr> <td>Pressure Points</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="pressure_points"><%=@character.pressure_points%></td> 
-				 <td class="rest-in-place" data-attribute="pressure_points_bonus"><%=@character.pressure_points_bonus%></td> 
+				 <%= render 'stat', stat: :pressure_points %>
+				 <%= render 'stat', stat: :pressure_points_bonus %> 
 			</tr>
 
 			<tr> <td>Punches</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="punches"><%=@character.punches%></td> 
-				 <td class="rest-in-place" data-attribute="punches_bonus"><%=@character.punches_bonus%></td> 
+				 <%= render 'stat', stat: :punches %>
+				 <%= render 'stat', stat: :punches_bonus %> 
 			</tr>
 		</table>
 	</div>
@@ -511,56 +510,56 @@
 			<tr> <th>Stat</th> <th>Total</th> <th>Training Points</th> <th>Bonus Points</th> </tr>
 			<tr> <td>Armors</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="armors"><%=@character.armors%></td> 
-				 <td class="rest-in-place" data-attribute="armors_bonus"><%=@character.armors_bonus%></td> 
+				 <%= render 'stat', stat: :armors %>
+				 <%= render 'stat', stat: :armors_bonus %>
 			</tr>
 
 			<tr> <td>Blades</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="blades"><%=@character.blades%></td> 
-				 <td class="rest-in-place" data-attribute="blades_bonus"><%=@character.blades_bonus%></td> 
+				 <%= render 'stat', stat: :blades %>
+				 <%= render 'stat', stat: :blades_bonus %>
 			</tr>
 
 			<tr> <td>Clothing</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="clothing"><%=@character.clothing%></td> 
-				 <td class="rest-in-place" data-attribute="clothing_bonus"><%=@character.clothing_bonus%></td> 
+				 <%= render 'stat', stat: :clothing %>
+				 <%= render 'stat', stat: :clothing_bonus %>
 			</tr>
 
 			<tr> <td>Flails/Maces</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="flails_c"><%=@character.flails_c%></td> 
-				 <td class="rest-in-place" data-attribute="flails_c_bonus"><%=@character.flails_c_bonus%></td> 
+				 <%= render 'stat', stat: :flails_c %>
+				 <%= render 'stat', stat: :flails_c_bonus %> 
 			</tr>
 
 			<tr> <td>Foods</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="foods"><%=@character.foods%></td> 
-				 <td class="rest-in-place" data-attribute="foods_bonus"><%=@character.foods_bonus%></td> 
+				 <%= render 'stat', stat: :foods %>
+				 <%= render 'stat', stat: :foods_bonus %>
 			</tr>
 
 			<tr> <td>Gauntlets</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="gauntlets"><%=@character.gauntlets%></td> 
-				 <td class="rest-in-place" data-attribute="gauntlets_bonus"><%=@character.gauntlets_bonus%></td> 
+				 <%= render 'stat', stat: :gauntlets %>
+				 <%= render 'stat', stat: :gauntlets_bonus %> 
 			</tr>
 
 			<tr> <td>Mallets/Picks</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="mallets_c"><%=@character.mallets_c%></td> 
-				 <td class="rest-in-place" data-attribute="mallets_c_bonus"><%=@character.mallets_c_bonus%></td> 
+				 <%= render 'stat', stat: :mallets_c %>
+				 <%= render 'stat', stat: :mallets_c_bonus %> 
 			</tr>
 
 			<tr> <td>Pole-arms/Spears</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="spears_c"><%=@character.spears_c%></td> 
-				 <td class="rest-in-place" data-attribute="spears_c_bonus"><%=@character.spears_c_bonus%></td> 
+				 <%= render 'stat', stat: :spears_c %>
+				 <%= render 'stat', stat: :spears_c_bonus %>
 			</tr>
 
 			<tr> <td>Shields</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="shields"><%=@character.shields%></td> 
-				 <td class="rest-in-place" data-attribute="shields_bonus"><%=@character.shields_bonus%></td> 
+				 <%= render 'stat', stat: :shields %>
+				 <%= render 'stat', stat: :shields_bonus %>
 			</tr>
 		</table>
 	</div>
@@ -570,52 +569,51 @@
 			<tr> <th>Stat</th> <th>Total</th> <th>Training Points</th> <th>Bonus Points</th> </tr>
 			<tr> <td>Bows/Slings+Ammo</td> 
 				<td>TODO</td> 
-				<td class="rest-in-place" data-attribute="bows_c"><%=@character.bows_c%></td> 
-				<td class="rest-in-place" data-attribute="bows_c_bonus"><%=@character.bows_c_bonus%></td> 
+				<%= render 'stat', stat: :bows_c %>
+				<%= render 'stat', stat: :bows_c_bonus %>
 			</tr>
 
 			<tr> <td>Structures</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="structures"><%=@character.structures%></td> 
-				 <td class="rest-in-place" data-attribute="structures_bonus"><%=@character.structures_bonus%></td> 
+				 <%= render 'stat', stat: :structures %>
+				 <%= render 'stat', stat: :structures_bonus %> 
 			</tr>
 
 			<tr> <td>Tools</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="tools"><%=@character.tools%></td> 
-				 <td class="rest-in-place" data-attribute="tools_bonus"><%=@character.tools_bonus%></td> 
+				 <%= render 'stat', stat: :tools %>
+				 <%= render 'stat', stat: :tools_bonus %>
 			</tr>
 
 			<tr> <td>Traps</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="traps"><%=@character.traps%></td> 
-				 <td class="rest-in-place" data-attribute="traps_bonus"><%=@character.traps_bonus%></td> 
+				 <%= render 'stat', stat: :traps %>
+				 <%= render 'stat', stat: :traps_bonus %>
 			</tr>
 
 			<tr> <td>Chemicals</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="chemicals"><%=@character.chemicals%></td> 
-				 <td class="rest-in-place" data-attribute="chemicals_bonus"><%=@character.chemicals_bonus%></td> 
+				 <%= render 'stat', stat: :chemicals %>
+				 <%= render 'stat', stat: :chemicals_bonus %> 
 			</tr>
 
 			<tr> <td>Explosives</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="explosives"><%=@character.explosives%></td> 
-				 <td class="rest-in-place" data-attribute="explosives_bonus"><%=@character.explosives_bonus%></td> 
+				 <%= render 'stat', stat: :explosives %>
+				 <%= render 'stat', stat: :explosives_bonus %>
 			</tr>
 
 			<tr> <td>Firearms+Ammo</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="firearms_c"><%=@character.firearms_c%></td> 
-				 <td class="rest-in-place" data-attribute="firearms_c_bonus"><%=@character.firearms_c_bonus%></td> 
+				 <%= render 'stat', stat: :firearms_c %>
+				 <%= render 'stat', stat: :firearms_c_bonus %> 
 			</tr>
 
 			<tr> <td>Machines</td> 
 				 <td>TODO</td> 
-				 <td class="rest-in-place" data-attribute="machines"><%=@character.machines%></td> 
-				 <td class="rest-in-place" data-attribute="machines_bonus"><%=@character.machines_bonus%></td> 
+				 <%= render 'stat', stat: :machines %>
+				 <%= render 'stat', stat: :machines_bonus %>
 			</tr>
 		</table>
 	</div>
-</div>
 </div>

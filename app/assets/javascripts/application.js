@@ -12,8 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap-sprockets
+//= require jquery.purr
 //= require jquery.turbolinks
-//= require 'rest_in_place'
 //= require turbolinks
+//= require bootstrap-sprockets
+//= require best_in_place
+//= require best_in_place.purr
 //= require_tree .

@@ -17,7 +17,8 @@ gem 'jquery-turbolinks'
 gem 'simple_form'
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'
-gem 'rest_in_place'
+gem 'best_in_place'
+gem 'responders'
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'

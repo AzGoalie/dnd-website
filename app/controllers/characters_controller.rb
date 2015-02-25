@@ -3,6 +3,8 @@ class CharactersController < ApplicationController
 	before_action :check_campaign, only: [:new, :create]
 	before_action :get_campaign,   only: [:new, :create]
 
+	respond_to :html, :json
+
 	def new
 		@character = Character.new
 	end
@@ -25,17 +27,8 @@ class CharactersController < ApplicationController
 
 	def update
 		@character = Character.find params[:id]
-		if @character.update_attributes!(character_params)
-		respond_to do |format|
-			format.html { redirect_to( @character )}
-			format.json { render :json => @character }
-		end
-		else
-			respond_to do |format|
-				format.html { render :action  => :edit } # edit.html.erb
-				format.json { render :nothing =>  true }
-			end
-		end
+		@character.update_attributes(character_params)
+		respond_with @character
 	end
 
 	def destroy
@@ -44,7 +37,7 @@ class CharactersController < ApplicationController
     	flash[:success] = "Character deleted"
     	redirect_to characters_campaign_path(campaign)
 	end
-
+	
 	private
 		def character_params
 			params.require(:character).permit!
