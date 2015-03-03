@@ -1,8 +1,30 @@
+<%= content_tag :div, class: "character_id", data: {id: @character.id} do %>
+<% end %>
+
 <% provide(:title, @character.name) %>
 
-<h1 class="text-center">
-  <%= best_in_place @character, :name %>
-</h1>
+<div class="row">
+	<div class="col-sm-6">
+		<h2>Status</h2>
+		<table class="table table-striped">
+			<tr> 
+				<th>Name</th> <%= render 'stat', stat: :name %>
+				<th>Current HP</th> <td id="current_hp">0</td>
+			</tr>
+			<tr> <th>Experience</th><%= render 'stat', stat: :xp %></tr>
+			<tr> <th>Level</th><td id="level"><%=@character.level%></td></tr>
+		</table>
+	</div>
+
+	<div class="col-sm-6">
+		<h2>Time</h2>
+		<table class="table table-striped">
+			<tr> <th>Name</th> <td><%= best_in_place @character, :name %></td></tr>
+			<tr> <th>XP</th><td><%= best_in_place @character, :xp %></td></tr>
+			<tr> <th>Stat</th> <th>Total</th> <th>Training Points</th> <th>Bonus Points</th> </tr>
+		</table>
+	</div>
+</div>
 
 <div class="row">
 	<div class="col-sm-6 ">
@@ -10,36 +32,36 @@
 		<table class="table table-striped">
 			<tr> <th>Stat</th> <th>Total</th> <th>Training Points</th> <th>Bonus Points</th> </tr>
 			<tr> <td>Max HP</td> 
-				 <td>TODO</td> 
+				 <td id="hp">0</td> 
 				 <%= render 'stat', stat: :hp %>
 				 <%= render 'stat', stat: :hp_bonus %>
 			</tr>
 
 			<tr> <td>Max Stamina</td> 
-				 <td>TODO</td> 
+				 <td id="stamina">0</td> 
 				 <%= render 'stat', stat: :stamina %>
 				 <%= render 'stat', stat: :stamina_bonus %>
 			</tr>
 
 			<tr> <td>Max Eita</td> 
-				 <td>TODO</td> 
+				 <td id="eita">0</td> 
 				 <%= render 'stat', stat: :eita %>
 				 <%= render 'stat', stat: :eita_bonus %>
 			</tr>
 
 			<tr> <td>Initiative</td> 
-				 <td>TODO</td> 
+				 <td id="initiative">0</td> 
 				 <%= render 'stat', stat: :initiative %>
 				 <%= render 'stat', stat: :initiative_bonus %>
 			</tr>
 			<tr> <td>Adrenaline</td> 
-				 <td>TODO</td> 
+				 <td id="adrenaline">0</td> 
 				 <%= render 'stat', stat: :adrenaline %>
 				 <%= render 'stat', stat: :adrenaline_bonus %>
 			</tr>
 			
 			<tr> <td>Focus</td> 
-				 <td>TODO</td> 
+				 <td id="focus">0</td> 
 				 <%= render 'stat', stat: :focus %>
 				 <%= render 'stat', stat: :focus_bonus %>
 			</tr>
@@ -51,37 +73,37 @@
 		<table class="table table-striped">
 			<tr> <th>Stat</th> <th>Total</th> <th>Training Points</th> <th>Bonus Points</th> </tr>
 			<tr> <td>Strength</td> 
-				 <td>TODO</td> 
+				 <td id="strength">0</td> 
 				 <%= render 'stat', stat: :strength %>
 				 <%= render 'stat', stat: :strength_bonus %>
 			</tr>
 
 			<tr> <td>Constitution</td> 
-				 <td>TODO</td> 
+				 <td id="constitution">0</td> 
 				 <%= render 'stat', stat: :constitution %>
 				 <%= render 'stat', stat: :constitution_bonus %>
 			</tr>
 
 			<tr> <td>Dexterity</td> 
-				 <td>TODO</td> 
+				 <td id="dexterity">0</td> 
 				 <%= render 'stat', stat: :dexterity %>
 				 <%= render 'stat', stat: :dexterity_bonus %>
 			</tr>
 
 			<tr> <td>Intelligence</td> 
-				 <td>TODO</td> 
+				 <td id="intelligence">0</td> 
 				 <%= render 'stat', stat: :intelligence %>
 				 <%= render 'stat', stat: :intelligence_bonus %>
 			</tr>
 
 			<tr> <td>Wisdom</td> 
-				 <td>TODO</td> 
+				 <td id="wisdom">0</td> 
 				 <%= render 'stat', stat: :wisdom %>
 				 <%= render 'stat', stat: :wisdom_bonus %>
 			</tr>
 
 			<tr> <td>Charisma</td> 
-				 <td>TODO</td> 
+				 <td id="charisma">0</td> 
 				 <%= render 'stat', stat: :charisma %>
 				 <%= render 'stat', stat: :charisma_bonus %>
 			</tr>
@@ -95,25 +117,25 @@
 		<table class="table table-striped">
 			<tr> <th>Stat</th> <th>Total</th> <th>Training Points</th> <th>Bonus Points</th> </tr>
 			<tr> <td>Block</td> 
-				<td>TODO</td> 
+				<td id="block">0</td> 
 				<%= render 'stat', stat: :block %>
 				<%= render 'stat', stat: :block_bonus %>
 			</tr>
 
 			<tr> <td>Reflex</td> 
-				 <td>TODO</td> 
+				 <td id="reflex">0</td> 
 				 <%= render 'stat', stat: :reflex %>
 				 <%= render 'stat', stat: :reflex_bonus %>
 			</tr>
 
 			<tr> <td>Resilience</td> 
-				 <td>TODO</td> 
+				 <td id="resilience">0</td> 
 				 <%= render 'stat', stat: :resilience %>
 				 <%= render 'stat', stat: :resilience_bonus %>
 			</tr>
 
 			<tr> <td>Willpower</td> 
-				 <td>TODO</td> 
+				 <td id="willpower">0</td> 
 				 <%= render 'stat', stat: :willpower %>
 				 <%= render 'stat', stat: :willpower_bonus %>
 			</tr>
@@ -125,37 +147,37 @@
 		<table class="table table-striped">
 			<tr> <th>Stat</th> <th>Total</th> <th>Training Points</th> <th>Bonus Points</th> </tr>
 			<tr> <td>Sorcery</td> 
-				 <td>TODO</td> 
+				 <td id="sorcery">0</td> 
 				 <%= render 'stat', stat: :sorcery %>
 				 <%= render 'stat', stat: :sorcery_bonus %> 
 			</tr>
 
 			<tr> <td>Enchantment</td> 
-				 <td>TODO</td> 
+				 <td id="enchantment">0</td> 
 				 <%= render 'stat', stat: :enchantment %>
 				 <%= render 'stat', stat: :enchantment_bonus %>
 			</tr>
 
 			<tr> <td>Divine</td> 
-				 <td>TODO</td> 
+				 <td id="divine">0</td> 
 				 <%= render 'stat', stat: :divine %>
 				 <%= render 'stat', stat: :divine_bonus %>
 			</tr>
 
 			<tr> <td>Barding</td> 
-				 <td>TODO</td> 
+				 <td id="barding">0</td> 
 				 <%= render 'stat', stat: :barding %>
 				 <%= render 'stat', stat: :barding_bonus %>
 			</tr>
 
 			<tr> <td>Wizardry</td> 
-				 <td>TODO</td> 
+				 <td id="wizardry">0</td> 
 				 <%= render 'stat', stat: :wizardry %>
 				 <%= render 'stat', stat: :wizardry_bonus %>
 			</tr>
 
 			<tr> <td>Alchemy</td> 
-				 <td>TODO</td> 
+				 <td id="alchemy">0</td> 
 				 <%= render 'stat', stat: :alchemy %>
 				 <%= render 'stat', stat: :alchemy_bonus %>
 			</tr>
@@ -170,49 +192,49 @@
 		<table class="table table-striped">
 			<tr> <th>Stat</th> <th>Total</th> <th>Training Points</th> <th>Bonus Points</th> </tr>
 			<tr> <td>Acrobatics</td> 
-				<td>TODO</td> 
+				<td id="acrobatics">0</td> 
 				<%= render 'stat', stat: :acrobatics %>
 				<%= render 'stat', stat: :acrobatics_bonus %>
 			</tr>
 
 			<tr> <td>Athletics</td> 
-				 <td>TODO</td> 
+				 <td id="athletics">0</td> 
 				 <%= render 'stat', stat: :athletics %>
 				 <%= render 'stat', stat: :athletics_bonus %>
 			</tr>
 
 			<tr> <td>Endurance</td> 
-				 <td>TODO</td> 
+				 <td id="endurance">0</td> 
 				 <%= render 'stat', stat: :endurance %>
 				 <%= render 'stat', stat: :endurance_bonus %>
 			</tr>
 
 			<tr> <td>Bluff</td> 
-				 <td>TODO</td> 
+				 <td id="bluff">0</td> 
 				 <%= render 'stat', stat: :bluff %>
 				 <%= render 'stat', stat: :bluff_bonus %>
 			</tr>
 
 			<tr> <td>Diplomacy</td> 
-				 <td>TODO</td> 
+				 <td id="diplomacy">0</td> 
 				 <%= render 'stat', stat: :diplomacy %>
 				 <%= render 'stat', stat: :diplomacy_bonus %>
 			</tr>
 
 			<tr> <td>Intimidate</td> 
-				 <td>TODO</td> 
+				 <td id="intimidate">0</td> 
 				 <%= render 'stat', stat: :intimidate %>
 				 <%= render 'stat', stat: :intimidate_bonus %>
 			</tr>
 
 			<tr> <td>History</td> 
-				 <td>TODO</td> 
+				 <td id="history">0</td> 
 				 <%= render 'stat', stat: :history %>
 				 <%= render 'stat', stat: :history_bonus %>
 			</tr>
 
 			<tr> <td>Insight</td> 
-				 <td>TODO</td> 
+				 <td id="insight">0</td> 
 				 <%= render 'stat', stat: :insight %>
 				 <%= render 'stat', stat: :insight_bonus %>
 			</tr>
@@ -223,49 +245,49 @@
 		<table class="table table-striped">
 			<tr> <th>Stat</th> <th>Total</th> <th>Training Points</th> <th>Bonus Points</th> </tr>
 			<tr> <td>Perception</td> 
-				 <td>TODO</td> 
+				 <td id="perception">0</td> 
 				 <%= render 'stat', stat: :perception %>
 				 <%= render 'stat', stat: :perception_bonus %>
 			</tr>
 
 			<tr> <td>Stealth</td> 
-				 <td>TODO</td> 
+				 <td id="stealth">0</td> 
 				 <%= render 'stat', stat: :stealth %>
 				 <%= render 'stat', stat: :stealth_bonus %>
 			</tr>
 
 			<tr> <td>Thievery</td> 
-				 <td>TODO</td> 
+				 <td id="thievery">0</td> 
 				 <%= render 'stat', stat: :thievery %>
 				 <%= render 'stat', stat: :thievery_bonus %>
 			</tr>
 
 			<tr> <td>Beast Mastery</td> 
-				 <td>TODO</td> 
+				 <td id="beast_mastery">0</td> 
 				 <%= render 'stat', stat: :beast_mastery %>
 				 <%= render 'stat', stat: :beast_mastery_bonus %>
 			</tr>
 
 			<tr> <td>Botany</td> 
-				 <td>TODO</td> 
+				 <td id="botany">0</td> 
 				 <%= render 'stat', stat: :botany %>
 				 <%= render 'stat', stat: :botany_bonus %>
 			</tr>
 
 			<tr> <td>Gathering</td> 
-				 <td>TODO</td> 
+				 <td id="gathering">0</td> 
 				 <%= render 'stat', stat: :gathering %>
 				 <%= render 'stat', stat: :gathering_bonus %>
 			</tr>
 
 			<tr> <td>Spelunking</td> 
-				 <td>TODO</td> 
+				 <td id="spelunking">0</td> 
 				 <%= render 'stat', stat: :spelunking %>
 				 <%= render 'stat', stat: :spelunking_bonus %> 
 			</tr>
 
 			<tr> <td>Tracking</td> 
-				 <td>TODO</td> 
+				 <td id="tracking">0</td> 
 				 <%= render 'stat', stat: :tracking %>
 				 <%= render 'stat', stat: :tracking_bonus %>
 			</tr>
@@ -279,85 +301,85 @@
 		<table class="table table-striped">
 			<tr> <th>Stat</th> <th>Total</th> <th>Training Points</th> <th>Bonus Points</th> </tr>
 			<tr> <td>Axes</td> 
-				 <td>TODO</td> 
+				 <td id="axes">0</td> 
 				 <%= render 'stat', stat: :axes %>
 				 <%= render 'stat', stat: :axes_bonus %>
 			</tr>
 
 			<tr> <td>Double Axes</td> 
-				 <td>TODO</td> 
+				 <td id="double_axes">0</td> 
 				 <%= render 'stat', stat: :double_axes %>
 				 <%= render 'stat', stat: :double_axes_bonus %>
 			</tr>
 
 			<tr> <td>Double Hammers</td> 
-				 <td>TODO</td> 
+				 <td id="double_hammers">0</td> 
 				 <%= render 'stat', stat: :double_hammers %>
 				 <%= render 'stat', stat: :double_hammers_bonus %>
 			</tr>
 
 			<tr> <td>Heavy Blades</td> 
-				 <td>TODO</td> 
+				 <td id="heavy_blades">0</td> 
 				 <%= render 'stat', stat: :heavy_blades %>
 				 <%= render 'stat', stat: :heavy_blades_bonus %>
 			</tr>
 
 			<tr> <td>Heavy Gauntlets</td> 
-				 <td>TODO</td> 
+				 <td id="heavy_gauntlets">0</td> 
 				 <%= render 'stat', stat: :heavy_gauntlets %>
 				 <%= render 'stat', stat: :heavy_gauntlets_bonus %> 
 			</tr>
 
 			<tr> <td>Mallets</td> 
-				 <td>TODO</td> 
+				 <td id="mallets">0</td> 
 				 <%= render 'stat', stat: :mallets %>
 				 <%= render 'stat', stat: :mallets_bonus %> 
 			</tr>
 
 			<tr> <td>Picks</td> 
-				 <td>TODO</td> 
+				 <td id="picks">0</td> 
 				 <%= render 'stat', stat: :picks %>
 				 <%= render 'stat', stat: :picks_bonus %>
 			</tr>
 
 			<tr> <td>Double Lights</td> 
-				 <td>TODO</td> 
+				 <td id="double_lights">0</td> 
 				 <%= render 'stat', stat: :double_lights %>
 				 <%= render 'stat', stat: :double_lights_bonus %>
 			</tr>
 
 			<tr> <td>Hatchets</td> 
-				 <td>TODO</td> 
+				 <td id="hatchets">0</td> 
 				 <%= render 'stat', stat: :hatchets %>
 				 <%= render 'stat', stat: :hatchets_bonus %> 
 			</tr>
 
 			<tr> <td>Flails</td> 
-				 <td>TODO</td> 
+				 <td id="flails">0</td> 
 				 <%= render 'stat', stat: :flails %>
 				 <%= render 'stat', stat: :flails_bonus %>
 			</tr>
 
 			<tr> <td>Heavy Thrown</td> 
-				 <td>TODO</td> 
+				 <td id="heavy_thrown">0</td> 
 				 <%= render 'stat', stat: :heavy_thrown %>
 				 <%= render 'stat', stat: :heavy_thrown_bonus %>
 			</tr>
 
 			<tr> <td>Maces</td> 
-				 <td>TODO</td> 
+				 <td id="maces">0</td> 
 				 <%= render 'stat', stat: :maces %>
 				 <%= render 'stat', stat: :maces_bonus %>
 			</tr>
 
 			<tr> <td>Pole-arms/Spears</td> 
-				 <td>TODO</td> 
+				 <td id="spears">0</td> 
 				 <%= render 'stat', stat: :spears %>
 				 <%= render 'stat', stat: :spears_bonus %>
 			</tr>
 
 			<tr> <td>Bombs</td> 
-				 <td>TODO</td> 
+				 <td id="bombs">0</td> 
 				 <%= render 'stat', stat: :bombs %>
 				 <%= render 'stat', stat: :bombs_bonus %>
 			</tr>
@@ -368,85 +390,85 @@
 		<table class="table table-striped">
 			<tr> <th>Stat</th> <th>Total</th> <th>Training Points</th> <th>Bonus Points</th> </tr>		
 			<tr> <td>Bows</td> 
-				 <td>TODO</td> 
+				 <td id="bows">0</td> 
 				 <%= render 'stat', stat: :bows %>
 				 <%= render 'stat', stat: :bows_bonus %>
 			</tr>
 
 			<tr> <td>Light Blades</td> 
-				 <td>TODO</td> 
+				 <td id="light_blades">0</td> 
 				 <%= render 'stat', stat: :light_blades %>
 				 <%= render 'stat', stat: :light_blades_bonus %>
 			</tr>
 
 			<tr> <td>Light Gauntlets</td> 
-				 <td>TODO</td> 
+				 <td id="light_gauntlets">0</td> 
 				 <%= render 'stat', stat: :light_gauntlets %>
 				 <%= render 'stat', stat: :light_gauntlets_bonus %>
 			</tr>
 
 			<tr> <td>Light Thrown</td> 
-				 <td>TODO</td> 
+				 <td id="light_thrown">0</td> 
 				 <%= render 'stat', stat: :light_thrown %>
 				 <%= render 'stat', stat: :light_thrown_bonus %> 
 			</tr>
 
 			<tr> <td>Slings</td> 
-				 <td>TODO</td> 
+				 <td id="slings">0</td> 
 				 <%= render 'stat', stat: :slings %>
 				 <%= render 'stat', stat: :slings_bonus %> 
 			</tr>
 
 			<tr> <td>Blow Darts</td> 
-				 <td>TODO</td> 
+				 <td id="blow_darts">0</td> 
 				 <%= render 'stat', stat: :blow_darts %>
 				 <%= render 'stat', stat: :blow_darts_bonus %>
 			</tr>
 
 			<tr> <td>Crossbows</td> 
-				 <td>TODO</td> 
+				 <td id="crossbows">0</td> 
 				 <%= render 'stat', stat: :crossbows %>
 				 <%= render 'stat', stat: :crossbows_bonus %>
 			</tr>
 
 			<tr> <td>Firearms</td> 
-				 <td>TODO</td> 
+				 <td id="firearms">0</td> 
 				 <%= render 'stat', stat: :firearms %>
 				 <%= render 'stat', stat: :firearms_bonus %>
 			</tr>
 
 			<tr> <td>Crystal Orbs</td> 
-				 <td>TODO</td> 
+				 <td id="crystal_orbs">0</td> 
 				 <%= render 'stat', stat: :crystal_orbs %>
 				 <%= render 'stat', stat: :crystal_orbs_bonus %>
 			</tr>
 
 			<tr> <td>Staffs</td> 
-				 <td>TODO</td> 
+				 <td id="staffs">0</td> 
 				 <%= render 'stat', stat: :staffs %>
 				 <%= render 'stat', stat: :staffs_bonus %>
 			</tr>
 
 			<tr> <td>Divine Tomes</td> 
-				 <td>TODO</td> 
+				 <td id="divine_tomes">0</td> 
 				 <%= render 'stat', stat: :divine_tomes %>
 				 <%= render 'stat', stat: :divine_tomes_bonus %> 
 			</tr>
 
 			<tr> <td>Symbols</td> 
-				 <td>TODO</td> 
+				 <td id="symbols">0</td> 
 				 <%= render 'stat', stat: :symbols %>
 				 <%= render 'stat', stat: :symbols_bonus %>
 			</tr>
 
 			<tr> <td>Gemstones</td> 
-				 <td>TODO</td> 
+				 <td id="gemstones">0</td> 
 				 <%= render 'stat', stat: :gemstones %>
 				 <%= render 'stat', stat: :gemstones_bonus %> 
 			</tr>
 
 			<tr> <td>Wands</td> 
-				 <td>TODO</td> 
+				 <td id="wands">0</td> 
 				 <%= render 'stat', stat: :wands %>
 				 <%= render 'stat', stat: :wands_bonus %>
 			</tr>
@@ -460,19 +482,19 @@
 		<table class="table table-striped">
 			<tr> <th>Stat</th> <th>Total</th> <th>Training Points</th> <th>Bonus Points</th> </tr>
 			<tr> <td>Balance</td>
-				 <td>TODO</td> 
+				 <td id="balance">0</td> 
 				 <%= render 'stat', stat: :balance %>
 				 <%= render 'stat', stat: :balance_bonus %> 
 			</tr>
 
 			<tr> <td>Blocks</td> 
-				 <td>TODO</td> 
+				 <td id="blocks">0</td> 
 				 <%= render 'stat', stat: :blocks %>
 				 <%= render 'stat', stat: :blocks_bonus %>
 			</tr>
 
 			<tr> <td>Kicks</td> 
-				 <td>TODO</td> 
+				 <td id="kicks">0</td> 
 				 <%= render 'stat', stat: :kicks %>
 				 <%= render 'stat', stat: :kicks_bonus %> 
 			</tr>
@@ -483,19 +505,19 @@
 		<table class="table table-striped">
 			<tr> <th>Stat</th> <th>Total</th> <th>Training Points</th> <th>Bonus Points</th> </tr>
 			<tr> <td>Pain</td> 
-				 <td>TODO</td> 
+				 <td id="pain">0</td> 
 				 <%= render 'stat', stat: :pain %>
 				 <%= render 'stat', stat: :pain_bonus %> 
 			</tr>
 
 			<tr> <td>Pressure Points</td> 
-				 <td>TODO</td> 
+				 <td id="pressure_points">0</td> 
 				 <%= render 'stat', stat: :pressure_points %>
 				 <%= render 'stat', stat: :pressure_points_bonus %> 
 			</tr>
 
 			<tr> <td>Punches</td> 
-				 <td>TODO</td> 
+				 <td id="punches">0</td> 
 				 <%= render 'stat', stat: :punches %>
 				 <%= render 'stat', stat: :punches_bonus %> 
 			</tr>
@@ -509,55 +531,55 @@
 		<table class="table table-striped">
 			<tr> <th>Stat</th> <th>Total</th> <th>Training Points</th> <th>Bonus Points</th> </tr>
 			<tr> <td>Armors</td> 
-				 <td>TODO</td> 
+				 <td id="armors">0</td> 
 				 <%= render 'stat', stat: :armors %>
 				 <%= render 'stat', stat: :armors_bonus %>
 			</tr>
 
 			<tr> <td>Blades</td> 
-				 <td>TODO</td> 
+				 <td id="blades">0</td> 
 				 <%= render 'stat', stat: :blades %>
 				 <%= render 'stat', stat: :blades_bonus %>
 			</tr>
 
 			<tr> <td>Clothing</td> 
-				 <td>TODO</td> 
+				 <td id="clothing">0</td> 
 				 <%= render 'stat', stat: :clothing %>
 				 <%= render 'stat', stat: :clothing_bonus %>
 			</tr>
 
 			<tr> <td>Flails/Maces</td> 
-				 <td>TODO</td> 
+				 <td id="flails_c">0</td> 
 				 <%= render 'stat', stat: :flails_c %>
 				 <%= render 'stat', stat: :flails_c_bonus %> 
 			</tr>
 
 			<tr> <td>Foods</td> 
-				 <td>TODO</td> 
+				 <td id="foods">0</td> 
 				 <%= render 'stat', stat: :foods %>
 				 <%= render 'stat', stat: :foods_bonus %>
 			</tr>
 
 			<tr> <td>Gauntlets</td> 
-				 <td>TODO</td> 
+				 <td id="gauntlets">0</td> 
 				 <%= render 'stat', stat: :gauntlets %>
 				 <%= render 'stat', stat: :gauntlets_bonus %> 
 			</tr>
 
 			<tr> <td>Mallets/Picks</td> 
-				 <td>TODO</td> 
+				 <td id="mallets_c">0</td> 
 				 <%= render 'stat', stat: :mallets_c %>
 				 <%= render 'stat', stat: :mallets_c_bonus %> 
 			</tr>
 
 			<tr> <td>Pole-arms/Spears</td> 
-				 <td>TODO</td> 
+				 <td id="spears_c">0</td> 
 				 <%= render 'stat', stat: :spears_c %>
 				 <%= render 'stat', stat: :spears_c_bonus %>
 			</tr>
 
 			<tr> <td>Shields</td> 
-				 <td>TODO</td> 
+				 <td id="shields">0</td> 
 				 <%= render 'stat', stat: :shields %>
 				 <%= render 'stat', stat: :shields_bonus %>
 			</tr>
@@ -568,49 +590,49 @@
 		<table class="table table-striped">
 			<tr> <th>Stat</th> <th>Total</th> <th>Training Points</th> <th>Bonus Points</th> </tr>
 			<tr> <td>Bows/Slings+Ammo</td> 
-				<td>TODO</td> 
+				<td id="bows_c">0</td> 
 				<%= render 'stat', stat: :bows_c %>
 				<%= render 'stat', stat: :bows_c_bonus %>
 			</tr>
 
 			<tr> <td>Structures</td> 
-				 <td>TODO</td> 
+				 <td id="structures">0</td> 
 				 <%= render 'stat', stat: :structures %>
 				 <%= render 'stat', stat: :structures_bonus %> 
 			</tr>
 
 			<tr> <td>Tools</td> 
-				 <td>TODO</td> 
+				 <td id="tools">0</td> 
 				 <%= render 'stat', stat: :tools %>
 				 <%= render 'stat', stat: :tools_bonus %>
 			</tr>
 
 			<tr> <td>Traps</td> 
-				 <td>TODO</td> 
+				 <td id="traps">0</td> 
 				 <%= render 'stat', stat: :traps %>
 				 <%= render 'stat', stat: :traps_bonus %>
 			</tr>
 
 			<tr> <td>Chemicals</td> 
-				 <td>TODO</td> 
+				 <td id="chemicals">0</td> 
 				 <%= render 'stat', stat: :chemicals %>
 				 <%= render 'stat', stat: :chemicals_bonus %> 
 			</tr>
 
 			<tr> <td>Explosives</td> 
-				 <td>TODO</td> 
+				 <td id="explosives">0</td> 
 				 <%= render 'stat', stat: :explosives %>
 				 <%= render 'stat', stat: :explosives_bonus %>
 			</tr>
 
 			<tr> <td>Firearms+Ammo</td> 
-				 <td>TODO</td> 
+				 <td id="firearms_c">0</td> 
 				 <%= render 'stat', stat: :firearms_c %>
 				 <%= render 'stat', stat: :firearms_c_bonus %> 
 			</tr>
 
 			<tr> <td>Machines</td> 
-				 <td>TODO</td> 
+				 <td id="machines">0</td> 
 				 <%= render 'stat', stat: :machines %>
 				 <%= render 'stat', stat: :machines_bonus %>
 			</tr>
