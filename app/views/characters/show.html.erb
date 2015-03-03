@@ -11,17 +11,24 @@
 				<th>Name</th> <%= render 'stat', stat: :name %>
 				<th>Current HP</th> <td id="current_hp">0</td>
 			</tr>
-			<tr> <th>Experience</th><%= render 'stat', stat: :xp %></tr>
-			<tr> <th>Level</th><td id="level"><%=@character.level%></td></tr>
+			<tr> 
+				<th>Experience</th><%= render 'stat', stat: :xp %>
+				<th>Current Stamina</th> <td id="current_stamina">0</td>
+			</tr>
+			<tr> 
+				<th>Level</th><td id="level"><%=@character.level%></td>
+				<th>Current Eita</th> <td id="current_eita">0</td>
+			</tr>
 		</table>
 	</div>
 
 	<div class="col-sm-6">
 		<h2>Time</h2>
 		<table class="table table-striped">
-			<tr> <th>Name</th> <td><%= best_in_place @character, :name %></td></tr>
-			<tr> <th>XP</th><td><%= best_in_place @character, :xp %></td></tr>
-			<tr> <th>Stat</th> <th>Total</th> <th>Training Points</th> <th>Bonus Points</th> </tr>
+			<tr><th>Month</th><th>Day</th><th>Time</th></tr>
+			<tr><td>TODO</td><td>TODO</td><td>TODO</td></tr>
+			<tr><th>Weekday</th><th>Turn</th></tr>
+			<tr><td>TODO</td><td>TODO</td></tr>
 		</table>
 	</div>
 </div>
