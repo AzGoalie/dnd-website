@@ -98,4 +98,9 @@ class Character < ActiveRecord::Base
   			  :alchemy,			 :alchemy_bonus,
   				presence: true, numericality: { only_integer: true }
 
+
+          def calc_level
+            x = self.xp
+            ((50/27.0)*(((2**0.25)*(15**0.5)*((-1+Math.log(x/75.0))**0.25)*(-1+Math.log(x/75.0))))).ceil
+          end
 end

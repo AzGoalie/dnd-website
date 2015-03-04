@@ -16,6 +16,7 @@ $(document).ready ->
 		 update_stats()
 
 update_stats = ->
+	document.getElementById('level').innerHTML = level()
 	document.getElementById('current_hp').innerHTML = hp_total()
 	document.getElementById('current_stamina').innerHTML = stamina_total()
 	document.getElementById('current_eita').innerHTML = eita_total()
@@ -114,6 +115,10 @@ get_value = (name) ->
 
 get_level = ->
 	Number(document.getElementById('level').innerHTML)
+
+level = ->
+	x = get_value('xp')
+	Math.ceil((50/27)*(((Math.pow(2,0.25))*(Math.pow(15,0.5))*(Math.pow(-1+Math.log(x/75),0.25))*(-1+Math.log(x/75)))))
 
 hp_total = ->
 	n = 2		# Base

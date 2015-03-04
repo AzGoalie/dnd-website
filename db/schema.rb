@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150223091514) do
+ActiveRecord::Schema.define(version: 20150304034227) do
 
   create_table "campaigns", force: :cascade do |t|
     t.string   "title"
@@ -34,7 +34,6 @@ ActiveRecord::Schema.define(version: 20150223091514) do
     t.string   "name"
     t.integer  "gold",                  default: 120
     t.integer  "silver",                default: 0
-    t.integer  "level",                 default: 5
     t.integer  "xp",                    default: 352
     t.integer  "hp",                    default: 0
     t.integer  "hp_bonus",              default: 0
