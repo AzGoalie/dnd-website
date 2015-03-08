@@ -16,6 +16,7 @@ $(document).ready ->
 		 update_stats()
 
 update_stats = ->
+	document.getElementById('name_title').innerHTML = document.getElementById(id+'_name').innerHTML
 	document.getElementById('level').innerHTML = level()
 	document.getElementById('current_hp').innerHTML = hp_total()
 	document.getElementById('current_stamina').innerHTML = stamina_total()
