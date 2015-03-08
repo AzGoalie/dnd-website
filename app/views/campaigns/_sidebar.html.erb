@@ -16,6 +16,7 @@
           <% if in_campaign? %>
             <li class="<%= 'active' if current_page?(characters_campaign_path) %>"> <%= link_to 'Characters', characters_campaign_path %> </li>
           <%end%>
+          <li class="disabled"> <%= link_to 'Notes', '#'%> </li>
           <% if is_owner? %>
             <li class="<%= 'active' if current_page?(edit_campaign_path(@campaign)) %>"> <%= link_to 'Settings', edit_campaign_path(@campaign) %> </li>
           <%end%>
