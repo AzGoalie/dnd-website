@@ -12,10 +12,8 @@
 		</div>
 	<%end%>
 
-	<% if current_user == @campaign.owner %>
-		<div class="list-group">
-			<h2>All Characters</h2>
-			<%= render @campaign.characters %>
-		</div>
-	<% end %>
+	<div class="list-group">
+		<h2>All Characters</h2>
+		<%= render @campaign.characters %>
+	</div>
 </div>

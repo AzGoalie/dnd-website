@@ -2,7 +2,8 @@ class CharactersController < ApplicationController
 	before_action :logged_in_user
 	before_action :check_campaign, only: [:new, :create]
 	before_action :get_campaign,   only: [:new, :create]
-	before_action :check_user,	   only: [:show, :update]
+	before_action :check_user,	   only: [:show]
+	before_action :check_edit,	   only: [:update]
 
 	respond_to :html, :json
 
@@ -37,6 +38,12 @@ class CharactersController < ApplicationController
     	redirect_to characters_campaign_path(campaign)
 	end
 
+	def in_campaign?
+		@character = Character.find(params[:id])
+		@campaign = @character.campaign
+		return (current_user == @campaign.owner || @campaign.users.include?(current_user))
+	end
+
 	private
 		def character_params
 			params.require(:character).permit!
@@ -59,7 +66,14 @@ class CharactersController < ApplicationController
 
 		def check_user
 			@character = Character.find(params[:id])
-			if current_user != @character.owner && current_user != @character.campaign.owner
+			if !in_campaign?
+				redirect_to root_path
+				flash[:danger] = "You are not part of this campaign"
+			end
+		end
+
+		def check_edit
+			if !can_edit?
 				redirect_to root_path
 				flash[:danger] = "You are not the owner of this character"
 			end

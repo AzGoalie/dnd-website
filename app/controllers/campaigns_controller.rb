@@ -2,6 +2,7 @@ class CampaignsController < ApplicationController
 	before_action :logged_in_user
 	before_action :correct_user, only: [:destory,:update, :edit]
 	before_action :private_game, only:[:show]
+	before_action :check_user, only:[:characters]
 
 	def new
 		@campaign = Campaign.new
@@ -64,6 +65,14 @@ class CampaignsController < ApplicationController
 			@campaign = Campaign.find(params[:id])
 			if @campaign.private? 
 				redirect_to root_url unless(@campaign.users.include?(current_user) || (current_user == @campaign.owner))
+			end
+		end
+
+		def check_user
+			@campaign = Campaign.find(params[:id])
+			if (current_user != @campaign.owner && !@campaign.users.include?(current_user))
+				redirect_to root_path
+				flash[:danger] = "You are not part of this campaign"
 			end
 		end
 end

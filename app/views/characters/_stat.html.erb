@@ -1,1 +1,1 @@
-<td id="<%=stat%>_act"> <%=best_in_place @character, stat, activator: "##{stat}_act"%> </td>
+<td id="<%=stat%>_act"> <%=best_in_place_if can_edit?, @character, stat, activator: "##{stat}_act"%> </td>
