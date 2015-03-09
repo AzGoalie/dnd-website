@@ -7,7 +7,7 @@ id = ''
 jQuery ->
 	$('.best_in_place').best_in_place()
 
-$(document).ready ->
+$('.characters.show').ready ->
 	id = 'best_in_place_character_' + $('.character_id').data('id')
 	update_stats()
 

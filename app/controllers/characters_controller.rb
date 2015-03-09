@@ -5,6 +5,8 @@ class CharactersController < ApplicationController
 	before_action :check_user,	   only: [:show]
 	before_action :check_edit,	   only: [:update]
 
+	helper_method :can_edit?
+
 	respond_to :html, :json
 
 	def new
@@ -42,6 +44,11 @@ class CharactersController < ApplicationController
 		@character = Character.find(params[:id])
 		@campaign = @character.campaign
 		return (current_user == @campaign.owner || @campaign.users.include?(current_user))
+	end
+
+	def can_edit?
+		@character = Character.find(params[:id])
+		return (current_user == @character.owner || current_user == @character.campaign.owner)
 	end
 
 	private

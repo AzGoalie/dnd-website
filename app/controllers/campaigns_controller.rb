@@ -2,7 +2,7 @@ class CampaignsController < ApplicationController
 	before_action :logged_in_user
 	before_action :correct_user, only: [:destory,:update, :edit]
 	before_action :private_game, only:[:show]
-	before_action :check_user, only:[:characters]
+	before_action :check_user, only:[:characters, :notes]
 
 	def new
 		@campaign = Campaign.new
@@ -48,6 +48,10 @@ class CampaignsController < ApplicationController
 	end
 
 	def characters
+		@campaign = Campaign.find(params[:id])
+	end
+
+	def notes
 		@campaign = Campaign.find(params[:id])
 	end
 

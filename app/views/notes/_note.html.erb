@@ -1,0 +1,6 @@
+<%= link_to(note, class: "list-group-item") do %>
+	<h4 class="list-group-item-heading">
+		<%=note.title%>
+		<span class="pull-right small"> Creator: <%=note.user.username%></span>
+	</h4>
+<%end%>

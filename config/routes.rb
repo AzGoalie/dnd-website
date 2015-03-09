@@ -16,11 +16,13 @@ Rails.application.routes.draw do
   resources :campaigns do 
     member do
       get 'characters'
+      get 'notes'
     end
   end
   resources :characters, except: [:index]
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
+  resources :notes
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

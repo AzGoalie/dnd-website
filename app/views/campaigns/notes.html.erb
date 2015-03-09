@@ -1,0 +1,19 @@
+<% provide(:title, "#{@campaign.title} Notes") %>
+
+<h1 class="text-center"><%=@campaign.title%></h1>
+<%= render 'sidebar' %>
+
+<div class="col-sm-9 ">
+	<% if current_user %>
+		<div class="list-group">
+			<h2>Your Notes</h2>
+			<%= link_to 'Create a new note!', new_note_path(campaign: @campaign.id), class: 'btn btn-primary btn-block' %> 
+			<%= render @campaign.notes.select { |n| n.user == current_user } %>
+		</div>
+	<%end%>
+
+	<div class="list-group">
+		<h2>All Pubic Notes</h2>
+		<%= render @campaign.notes.select { |n| !n.private } %>
+	</div>
+</div>
