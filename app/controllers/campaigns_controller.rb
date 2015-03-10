@@ -11,6 +11,7 @@ class CampaignsController < ApplicationController
 	def create
 		@campaign = current_user.owned_campaigns.build(campaign_params)
 		@campaign.owner = current_user
+		@campaign.users.push(current_user)
         
 		if @campaign.save
 			flash[:success] = "#{@campaign.title} created!"
@@ -57,7 +58,7 @@ class CampaignsController < ApplicationController
 
 	private
 		def campaign_params
-          params.require(:campaign).permit(:title, :description, :private, :user_ids => [])
+          params.require(:campaign).permit(:title, :description, :owner_id, :private, :user_ids => [])
         end
 
 		def correct_user
