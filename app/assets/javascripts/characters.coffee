@@ -8,7 +8,7 @@ jQuery ->
 	$('.best_in_place').best_in_place()
 
 $('.characters.show').ready ->
-	id = 'best_in_place_character_' + $('.character_id').data('id')
+	id = '#best_in_place_character_' + $('.character_id').data('id')
 	update_stats()
 
 	$('.best_in_place')
@@ -16,7 +16,7 @@ $('.characters.show').ready ->
 		 update_stats()
 
 update_stats = ->
-	document.getElementById('name_title').innerHTML = document.getElementById(id+'_name').innerHTML
+	document.getElementById('name_title').innerHTML = document.getElementById('name_act').innerHTML
 	document.getElementById('level').innerHTML = level()
 	document.getElementById('current_hp').innerHTML = hp_total()
 	document.getElementById('current_stamina').innerHTML = stamina_total()
@@ -112,7 +112,13 @@ update_stats = ->
 	document.getElementById('alchemy').innerHTML = alchemy_total()
 
 get_value = (name) ->
-	Number(document.getElementById(id+'_'+name).innerHTML)
+	a = Number($(id+'_'+name).html())
+	b = Number($('#'+name+'_act').html())
+
+	if isNaN(a)
+		return b
+	else
+		return a
 
 get_level = ->
 	Number(document.getElementById('level').innerHTML)
