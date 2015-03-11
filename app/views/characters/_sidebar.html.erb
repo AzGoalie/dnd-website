@@ -14,7 +14,10 @@
         <ul class="nav navbar-nav">
           <li class="<%= 'active' if current_page?(@character) %>"> <%= link_to 'Stats', @character %> </li>
           <li class="disabled"> <%= link_to 'Magics', '#'%> </li>
-          <li class="disabled"> <%= link_to 'Inventory', '#'%> </li>
+          <% if can_edit? %>
+            <li class="disabled"> <%= link_to 'Calculator', '#'%> </li>
+            <li class="disabled"> <%= link_to 'Inventory', '#'%> </li>
+          <% end %>
           <li> <%= link_to 'Characters', characters_campaign_path(@campaign) %> </li>
           <li <li class="<%= 'active' if current_page?(notes_campaign_path) %>"> <%= link_to 'Notes', notes_campaign_path(@campaign)%> </li>
 
