@@ -1,0 +1,11 @@
+<% provide(:title, "Edit Character") %>
+
+<h1 class="text-center"> Editing <%= @character.name %></h1>
+<%= render 'sidebar' %>
+<div class="col-sm-9" >
+<%= simple_form_for @character do |f| %>
+	<%= f.association :owner, collection: @campaign.users, label: "Transfer Ownership", required: false, label_method: :username %>
+	<%= f.button :submit, class: "btn btn-lg btn-primary btn-block" %>
+	<%= link_to 'Delete Character', @character, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-lg btn-danger btn-block" %>
+<% end %>
+</div>

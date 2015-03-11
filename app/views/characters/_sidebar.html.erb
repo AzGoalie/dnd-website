@@ -17,7 +17,10 @@
           <li class="disabled"> <%= link_to 'Inventory', '#'%> </li>
           <li> <%= link_to 'Characters', characters_campaign_path(@campaign) %> </li>
           <li <li class="<%= 'active' if current_page?(notes_campaign_path) %>"> <%= link_to 'Notes', notes_campaign_path(@campaign)%> </li>
-          <li class="disabled"> <%= link_to 'Settings', '#'%> </li>
+
+          <% if can_edit? %>
+            <li class="<%= 'active' if current_page?(edit_character_path) %>"> <%= link_to 'Settings', edit_character_path%> </li>
+          <% end %>
         </ul>
       </div><!--/.nav-collapse -->
     </div>

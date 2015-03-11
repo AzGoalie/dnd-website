@@ -3,7 +3,7 @@ class CharactersController < ApplicationController
 	before_action :check_campaign, only: [:new, :create]
 	before_action :get_campaign,   only: [:new, :create]
 	before_action :check_user,	   only: [:show]
-	before_action :check_edit,	   only: [:update]
+	before_action :check_edit,	   only: [:update, :edit]
 
 	helper_method :can_edit?
 
@@ -30,14 +30,20 @@ class CharactersController < ApplicationController
 
 	def update
 		@character.update_attributes(character_params)
+		@campaign = @character.campaign
 		respond_with @character
 	end
 
+	def edit
+		@character = Character.find(params[:id])
+		@campaign = @character.campaign
+	end
+
 	def destroy
-		campaign = Character.find(params[:id]).campaign 
+		@campaign = Character.find(params[:id]).campaign 
 		Character.find(params[:id]).destroy
     	flash[:success] = "Character deleted"
-    	redirect_to characters_campaign_path(campaign)
+    	redirect_to characters_campaign_path(@campaign)
 	end
 
 	def in_campaign?
